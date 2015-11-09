@@ -1,1 +1,1 @@
-[![Stories in Ready](https://badge.waffle.io/jasonpilz/sticker_shop.svg?label=ready&title=Ready)](http://waffle.io/jasonpilz/sticker_shop)
+
