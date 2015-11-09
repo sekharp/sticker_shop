@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AdminAuthorizationTest < ActionDispatch::IntegrationTest
-
   test "admin add sticker" do
     admin = User.create(username: "Vladmin",
                         password: "password",
@@ -22,12 +21,12 @@ class AdminAuthorizationTest < ActionDispatch::IntegrationTest
     assert page.has_content?(3)
   end
 
-  test 'admin can login' do
-    admin = User.create(username: "Vladmin",
-                        password: "password",
-                        role: 1)
+  test "admin can login" do
+    User.create(username: "Vladmin",
+                password: "password",
+                role: 1)
 
-    visit '/login'
+    visit "/login"
 
     fill_in "Username", with: "Vladmin"
     fill_in "Password", with: "password"
@@ -36,5 +35,4 @@ class AdminAuthorizationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Welcome Vladmin!")
     assert page.has_content?("Logout")
   end
-
 end
