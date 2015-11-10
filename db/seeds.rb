@@ -30,7 +30,7 @@ class Seed
     @browser_category.stickers.create(title: "Chrome",
                                       image_url: "http://devstickers.com/assets/img/cat/chrome.png",
                                       price: 2,
-                                      description: "Chrome logo")                                )
+                                      description: "Chrome logo")
     puts "#{Sticker.all.map(&:title).join(", ")} created."
   end
 

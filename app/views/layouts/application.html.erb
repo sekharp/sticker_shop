@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>StickerShop</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="nav-bar">
-  Cart: 0
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 
-</div>
-<%= yield %>
+  <div id="nav-bar">
+    Cart: <%= @cart.total %>
+    <% flash.each do |type, message| %>
+      <p><%= content_tag(:div, message) %></p>
+    <% end %>
+    <%= link_to "Cart", cart_stickers_path %>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>

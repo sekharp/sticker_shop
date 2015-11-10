@@ -11,6 +11,8 @@
     <li><%= sticker.title %></li>
     <li>$<%= sticker.price %></li>
     <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
-    <%= button_to "Add to Cart", cart_stickers_path(sticker_id: sticker.id) %>
+    <div id="<%= sticker.title %>-button">
+      <%= button_to "Add to Cart", cart_stickers_path(sticker_id: sticker.id) %>
+    </div>
   <% end %>
 </ul>

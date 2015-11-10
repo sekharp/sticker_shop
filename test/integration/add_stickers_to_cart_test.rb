@@ -15,7 +15,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
     click_button "Add to Cart"
 
     within("#nav-bar") do
-      assert page.has_content?("You now have 1 sticker.")
+      assert page.has_content?("Sticker added to cart")
       assert page.has_content?("Cart: 1")
     end
   end
@@ -26,9 +26,16 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo")
+    Sticker.create(title: "React.js",
+                   image_url: "http://devstickers.com/assets/img/cat/react-js.png",
+                   price: 8,
+                   description: "React.js logo")
 
     visit root_path
-    click_button "Add to Cart"
+    within "#Node.js-button" do
+      click_link "Add to Cart"
+    end
+
     click_link "Cart"
 
     within("#cart-contents") do
@@ -36,6 +43,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
       assert page.has_content?("6")
       assert page.has_content?("Node.js logo")
       assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")
+      assert page.has_content?("Subtotal: $14")
     end
 
   end
