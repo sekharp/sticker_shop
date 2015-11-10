@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+class Seed
+  def self.start
+    new.generate
+  end
+
+  def generate
+    create_stickers
+  end
+
+  def create_stickers
+    Sticker.create(title: "Node.js", image_url: "http://devstickers.com/assets/img/cat/nodejs.png", price: 6)
+    Sticker.create(title: "React.js", image_url: "http://devstickers.com/assets/img/cat/react-js.png", price: 8)
+    Sticker.create(title: "Ruby", image_url: "http://devstickers.com/assets/img/cat/ruby.png", price: 82)
+    Sticker.create(title: "Chrome", image_url: "http://devstickers.com/assets/img/cat/chrome.png", price: 2)
+    puts "#{Sticker.all.map(&:title).join(", ")} created."
+  end
+end
+
+Seed.start
