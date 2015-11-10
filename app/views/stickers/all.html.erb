@@ -1,6 +1,6 @@
 <h1>
   <% if @category.present? %>
-    <%= @category.title %> Stickers
+    <%= @category.title.capitalize %> Stickers
   <% else %>
     <%= "All Stickers" %>
   <% end %>
