@@ -1,4 +1,10 @@
-<h1>Sticker Index</h1>
+<h1>
+  <% if @category.present? %>
+    <%= @category.title %> Stickers
+  <% else %>
+    <%= "All Stickers" %>
+  <% end %>
+</h1>
 
 <ul id = "stickers">
   <% @stickers.each do |sticker| %>

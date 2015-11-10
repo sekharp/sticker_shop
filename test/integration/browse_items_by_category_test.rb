@@ -1,10 +1,10 @@
 require "test_helper"
 
 class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
-  test "visitor see sticker in correct category" do
+  test "visitor sees stickers in correct category" do
     company_category = Category.create(title: "Companies")
     product_category = Category.create(title: "Products")
-    
+
     company_category.stickers.create(title: "Node.js",
                                      image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                                      price: 2)
@@ -19,6 +19,7 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
 
     assert_current_path category_stickers_path(company_category)
     within "#stickers" do
+      refute page.has_content? "React.js"
       assert page.has_content? "Node.js"
       assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")
       assert page.has_content? "2"
@@ -29,10 +30,10 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
 
     assert_current_path category_stickers_path(product_category)
     within "#stickers" do
+      refute page.has_content? "Node.js"
       assert page.has_content? "React.js"
       assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/react-js.png']")
       assert page.has_content? "3"
     end
   end
-
 end
