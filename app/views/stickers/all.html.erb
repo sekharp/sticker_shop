@@ -1,0 +1,15 @@
+<h1>
+  <% if @category.present? %>
+    <%= @category.title %> Stickers
+  <% else %>
+    <%= "All Stickers" %>
+  <% end %>
+</h1>
+
+<ul id = "stickers">
+  <% @stickers.each do |sticker| %>
+    <li><%= sticker.title %></li>
+    <li>$<%= sticker.price %></li>
+    <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
+  <% end %>
+</ul>
