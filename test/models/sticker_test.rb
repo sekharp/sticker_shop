@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class StickerTest < ActiveSupport::TestCase
   test "is valid with correct params" do

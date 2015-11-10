@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorView < ActionDispatch::IntegrationTest
   test "site visitor can view stickers" do
