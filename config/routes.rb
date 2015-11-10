@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :categories do
     resources :stickers, only: [:index]
   end
+  resources :cart_stickers, only: [:create, :index]
 end
