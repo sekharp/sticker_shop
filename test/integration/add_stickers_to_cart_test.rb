@@ -2,7 +2,6 @@ require 'test_helper'
 
 class AddItemsToCartTest < ActionDispatch::IntegrationTest
   test "displays added item to cart message and cart item quantity" do
-    skip
     Sticker.create(title: "Node.js",
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
