@@ -1,0 +1,9 @@
+<h1>Sticker Index</h1>
+
+<ul>
+  <% @stickers.each do |sticker| %>
+    <li><%= sticker.title %></li>
+    <li>$<%= sticker.price %></li>
+    <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
+  <% end %>
+</ul>
