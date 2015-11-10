@@ -1,5 +1,6 @@
 class StickersController < ApplicationController
   def index
-    @stickers = Sticker.all
+    @category = Category.find(params[:category_id])
+    @stickers = @category.stickers.all
   end
 end

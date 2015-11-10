@@ -6,7 +6,7 @@ class VisitorView < ActionDispatch::IntegrationTest
                    image_url: "some-url",
                    price: 2)
 
-    visit stickers_path
+    visit root_path
 
     assert page.has_content?("Awesome sticker")
     assert page.has_content?(2)
