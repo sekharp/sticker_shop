@@ -20,7 +20,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down offset-s1">
         <li><%= link_to "Stickers", stickers_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
-        <li class=""><a href="<%= cart_stickers_path %>">Cart <span class="new badge blue lighten-2"><%= @cart.total %></span></a></li>
+        <li class=""><a href="<%= cart_index_path %>">Cart <span class="new badge blue lighten-2"><%= @cart.total_quantity %></span></a></li>
       </ul>
     </div>
   </nav>
