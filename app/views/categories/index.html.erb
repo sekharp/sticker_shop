@@ -1,3 +1,7 @@
-<% @categories.each do |cat| %>
-  <%= link_to cat.title, category_path(cat) %>
-<% end %>
+<div class="collection">
+  <% @categories.each do |cat| %>
+    <div class="collection-item">
+      <%= link_to cat.title.capitalize, category_path(cat) %>
+    </div>
+  <% end %>
+</div>
