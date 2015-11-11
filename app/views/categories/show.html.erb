@@ -1,10 +1,4 @@
-<h1>
-  <% if @category.present? %>
-    <%= @category.title.capitalize %> Stickers
-  <% else %>
-    <%= "All Stickers" %>
-  <% end %>
-</h1>
+<h1><%= @category.title.capitalize %> Stickers</h1>
 
 <ul id = "stickers">
   <% @stickers.each do |sticker| %>

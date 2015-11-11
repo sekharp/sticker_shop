@@ -1,0 +1,11 @@
+<div id="cart-contents">
+  <ul>
+    <% @stickers.each do |sticker| %>
+      <li><%= sticker.title %></li>
+      <li>$<%= sticker.price %></li>
+      <li>$<%= sticker.description %></li>
+      <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
+    <% end %>
+  </ul>
+  <h2>Subtotal: $<%= @cart.total_price %></h2>
+</div>

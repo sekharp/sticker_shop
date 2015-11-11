@@ -27,9 +27,12 @@
 
   <div class="container">
   <div id="nav-bar" class="blue lighten-2">
+    Cart: <%= @cart.total_quantity %>
+    <%= link_to "Cart", cart_index_path %>
     <% flash.each do |type, message| %>
       <p><%= content_tag(:div, message) %></p>
     <% end %>
+
   </div>
     <%= yield %>
   </div>
