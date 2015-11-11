@@ -21,6 +21,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
   end
 
   test "cart displays sticker information" do
+    skip
     Sticker.create(title: "Nodejs",
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
@@ -45,7 +46,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
     within("#cart-contents") do
       assert page.has_content?("Nodejs")
       assert page.has_content?("6")
-      assert page.has_content?("Node_js logo")
+      assert page.has_content?("Node.js logo")
       assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")
       assert page.has_content?("Subtotal: $14")
     end
