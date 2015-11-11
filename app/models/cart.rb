@@ -10,8 +10,14 @@ class Cart
     contents[sticker_id.to_s] += 1
   end
 
-  def total
+  def total_quantity
     contents.values.sum
+  end
+
+  def total_price
+    stickers = contents.keys.map do |k|
+      Sticker.where(id: k.to_i)
+    end
   end
 
   def count_of(sticker_id)

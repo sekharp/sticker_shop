@@ -19,11 +19,11 @@
   <script type="text/javascript" src="js/materialize.min.js"></script>
 
   <div id="nav-bar">
-    Cart: <%= @cart.total %>
+    Cart: <%= @cart.total_quantity %>
     <% flash.each do |type, message| %>
       <p><%= content_tag(:div, message) %></p>
     <% end %>
-    <%= link_to "Cart", cart_stickers_path %>
+    <%= link_to "Cart", cart_index_path %>
   </div>
 
   <%= yield %>

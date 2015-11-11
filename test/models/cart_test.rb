@@ -18,7 +18,7 @@ class CartTest < ActiveSupport::TestCase
   test "returns sum of all added stickers" do
     cart = Cart.new({ "1" => 1, "2" => 7, "3" => 4})
 
-    assert_equal 12, cart.total
+    assert_equal 12, cart.total_quantity
   end
 
   test "return sum of specific added stickers" do

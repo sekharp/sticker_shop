@@ -17,7 +17,7 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
 
     click_link "Companies"
 
-    assert_current_path category_stickers_path(company_category)
+    assert_current_path category_path(company_category)
     within "#stickers" do
       refute page.has_content? "React.js"
       assert page.has_content? "Node.js"
@@ -28,7 +28,7 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
     visit categories_path
     click_link "Products"
 
-    assert_current_path category_stickers_path(product_category)
+    assert_current_path category_path(product_category)
     within "#stickers" do
       refute page.has_content? "Node.js"
       assert page.has_content? "React.js"
