@@ -1,17 +1,17 @@
 <div id="cart-contents">
   <ul>
-    <% @stickers.each do |sticker| %>
-      <li><%= sticker.title %></li>
-      <li><%= sticker.description %></li>
-      <li>Quantity: <%= @quantities[sticker.id.to_s] %></li>
-      <li>Price: $<%= sticker.price %></li>
-      <li>Sticker Subtotal: $<%= sticker.price * @quantities[sticker.id.to_s] %></li>
-      <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
+    <% @cart.stickers.each do |cart_sticker| %>
+      <li><%= cart_sticker.sticker.title %></li>
+      <li><%= cart_sticker.sticker.description %></li>
+      <li>Quantity: <%= cart_sticker.quantity %></li>
+      <li>Price: $<%= cart_sticker.sticker.price %></li>
+      <li>Sticker Subtotal: $<%= cart_sticker.subtotal %></li>
+      <img src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
     <% end %>
   </ul>
 
   <ul>
     <li>Cart Quantity: <%= @cart.total_quantity %></li>
-    <li>Cart Total Price: $<%= @total_price %></li>
+    <li>Cart Total Price: $<%= @cart.total_price %></li>
   </ul>
 </div>

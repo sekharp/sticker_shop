@@ -49,7 +49,6 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
   end
 
   test "logged in user sees cart contents" do
-    skip
     User.create(username: "Jon",
                 password: "password")
 

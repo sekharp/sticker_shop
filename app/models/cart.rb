@@ -14,11 +14,21 @@ class Cart
     contents.values.sum
   end
 
-  # def total_price
-  #   Sticker.cart_items(session[:cart]).map { |sticker| sticker.price * @quantities[sticker.id.to_s] }.sum
-  # end
+  def total_price
+    subtotals = stickers.map do |cart_sticker|
+      cart_sticker.quantity * cart_sticker.sticker.price
+    end
+    subtotals.sum
+  end
 
   def count_of(sticker_id)
     contents[sticker_id.to_s]
+  end
+
+  def stickers
+    contents.map do |sticker_id, quantity|
+      sticker = Sticker.find(sticker_id)
+      CartSticker.new(sticker, quantity)
+    end
   end
 end

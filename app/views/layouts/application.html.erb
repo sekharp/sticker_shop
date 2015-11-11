@@ -16,7 +16,7 @@
 
   <nav id="primary-navigation">
     <div class="nav-wrapper blue darken-2">
-      <a href="#" class="brand-logo side-margin-15">StickerShop</a>
+      <a href="/" class="brand-logo side-margin-15">StickerShop</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down offset-s1">
         <li><%= link_to "Create Account", new_user_path %></li>
         <li><%= link_to "Stickers", stickers_path %></li>
@@ -31,15 +31,14 @@
     </div>
   </nav>
 
+  <div id="nav-bar" class="blue lighten-2 alert white-text">
+    <% flash.each do |type, message| %>
+      <p><%= content_tag(:div, message) %></p>
+    <% end %>
+  </div>
+
   <div class="container">
-    <div id="nav-bar" class="blue lighten-2 alert white-text">
-      <% flash.each do |type, message| %>
-        <p><%= content_tag(:div, message) %></p>
-      <% end %>
-    </div>
-
     <%= yield %>
-
   </div>
 </body>
 </html>

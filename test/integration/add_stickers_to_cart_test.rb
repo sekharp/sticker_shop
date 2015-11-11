@@ -8,15 +8,18 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
                    description: "Node.js logo")
 
     visit root_path
-    within("#nav-bar") do
-      assert page.has_content?("Cart: 0")
+    within("#primary-navigation") do
+      assert page.has_content?("0")
     end
 
     click_button "Add to Cart"
 
     within("#nav-bar") do
       assert page.has_content?("Sticker added to cart")
-      assert page.has_content?("Cart: 1")
+    end
+
+    within("#primary-navigation") do
+      assert page.has_content?("1")
     end
   end
 
