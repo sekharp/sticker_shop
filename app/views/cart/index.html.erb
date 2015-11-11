@@ -2,10 +2,16 @@
   <ul>
     <% @stickers.each do |sticker| %>
       <li><%= sticker.title %></li>
-      <li>$<%= sticker.price %></li>
-      <li>$<%= sticker.description %></li>
+      <li><%= sticker.description %></li>
+      <li>Quantity: <%= @quantities[sticker.id.to_s] %></li>
+      <li>Price: $<%= sticker.price %></li>
+      <li>Sticker Subtotal: $<%= sticker.price * @quantities[sticker.id.to_s] %></li>
       <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
     <% end %>
   </ul>
-  <h2>Subtotal: $<%= @cart.total_price %></h2>
+
+  <ul>
+    <li>Cart Quantity: <%= @cart.total_quantity %></li>
+    <li>Cart Total Price: <%= @total_price %></li>
+  </ul>
 </div>

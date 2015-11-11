@@ -6,8 +6,11 @@ class Sticker < ActiveRecord::Base
   belongs_to :category
 
   def self.cart_items(raw_ids)
-    raw_ids.keys.map do |k|
-      Sticker.where(id: k.to_i)
-    end[0]
+    if raw_ids.nil?
+      []
+    else
+      input_ids = raw_ids.keys.map(&:to_i)
+      Sticker.find(input_ids)
+    end
   end
 end

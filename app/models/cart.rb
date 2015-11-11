@@ -14,11 +14,9 @@ class Cart
     contents.values.sum
   end
 
-  def total_price
-    stickers = contents.keys.map do |k|
-      Sticker.where(id: k.to_i)
-    end
-  end
+  # def total_price
+  #   Sticker.cart_items(session[:cart]).map { |sticker| sticker.price * @quantities[sticker.id.to_s] }.sum
+  # end
 
   def count_of(sticker_id)
     contents[sticker_id.to_s]
