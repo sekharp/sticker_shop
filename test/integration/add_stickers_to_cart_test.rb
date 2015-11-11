@@ -21,25 +21,28 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
   end
 
   test "cart displays sticker information" do
-    skip
-    Sticker.create(title: "Node.js",
+    Sticker.create(title: "Nodejs",
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo")
-    Sticker.create(title: "React.js",
+    Sticker.create(title: "Reactjs",
                    image_url: "http://devstickers.com/assets/img/cat/react-js.png",
                    price: 8,
                    description: "React.js logo")
 
     visit root_path
-    within "#Node.js-button" do
-      click_link "Add to Cart"
+    within "#Nodejs-button" do
+      click_button "Add to Cart"
+    end
+
+    within "#Reactjs-button" do
+      click_button "Add to Cart"
     end
 
     click_link "Cart"
 
     within("#cart-contents") do
-      assert page.has_content?("Node.js")
+      assert page.has_content?("Nodejs")
       assert page.has_content?("6")
       assert page.has_content?("Node.js logo")
       assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")

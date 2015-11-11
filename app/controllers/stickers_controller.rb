@@ -8,8 +8,4 @@ class StickersController < ApplicationController
     end
   end
 
-  def all
-    @category = Category.find_by(title: params[:title])
-    @stickers = @category.stickers.all
-  end
 end
