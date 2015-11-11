@@ -18,23 +18,28 @@
     <div class="nav-wrapper blue darken-2">
       <a href="#" class="brand-logo side-margin-15">StickerShop</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down offset-s1">
+        <li><%= link_to "Create Account", new_user_path %></li>
         <li><%= link_to "Stickers", stickers_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
+        <li><% if current_user %>
+          <%= link_to "Logout", logout_path , method: :delete %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %></li>
         <li class=""><a href="<%= cart_index_path %>">Cart <span class="new badge blue lighten-2"><%= @cart.total_quantity %></span></a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
-  <div id="nav-bar" class="blue lighten-2">
-    Cart: <%= @cart.total_quantity %>
-    <%= link_to "Cart", cart_index_path %>
-    <% flash.each do |type, message| %>
-      <p><%= content_tag(:div, message) %></p>
-    <% end %>
+    <div id="nav-bar" class="blue lighten-2 alert white-text">
+      <% flash.each do |type, message| %>
+        <p><%= content_tag(:div, message) %></p>
+      <% end %>
+    </div>
 
-  </div>
     <%= yield %>
+
   </div>
 </body>
 </html>
