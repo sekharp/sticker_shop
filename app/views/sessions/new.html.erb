@@ -1,0 +1,10 @@
+<h1>Login</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+<!-- :session is just a symbol, it's not the session object, you could call it whatever you want -->
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Login" %>
+<% end %>
