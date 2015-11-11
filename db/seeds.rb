@@ -15,11 +15,11 @@ class Seed
   end
 
   def create_stickers
-    @javascript_category.stickers.create(title: "Node.js",
+    @javascript_category.stickers.create(title: "Nodejs",
                                          image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                                          price: 6,
                                          description: "Node.js logo")
-    @javascript_category.stickers.create(title: "React.js",
+    @javascript_category.stickers.create(title: "Reactjs",
                                          image_url: "http://devstickers.com/assets/img/cat/react-js.png",
                                          price: 8,
                                          description: "React.js logo")
