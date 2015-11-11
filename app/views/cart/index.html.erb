@@ -3,7 +3,11 @@
     <% @cart.stickers.each do |cart_sticker| %>
       <li><%= cart_sticker.sticker.title %></li>
       <li><%= cart_sticker.sticker.description %></li>
+
       <li>Quantity: <%= cart_sticker.quantity %></li>
+      <li><%= button_to "+", cart_index_path(sticker_id: cart_sticker.sticker.id) %></li>
+      <li><%= button_to "-", cart_sticker_path(id: cart_sticker.sticker.id), method: :delete %></li>
+
       <li>Price: $<%= cart_sticker.sticker.price %></li>
       <li>Sticker Subtotal: $<%= cart_sticker.subtotal %></li>
       <img src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
