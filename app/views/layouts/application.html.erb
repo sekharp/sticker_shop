@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="stylesheets/custom.css">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-  <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>StickerShop</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,15 +14,24 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
 
-  <div id="nav-bar">
-    Cart: <%= @cart.total %>
+  <nav id="primary-navigation">
+    <div class="nav-wrapper blue darken-2">
+      <a href="#" class="brand-logo side-margin-15">StickerShop</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down offset-s1">
+        <li><%= link_to "Stickers", stickers_path %></li>
+        <li><%= link_to "Categories", categories_path %></li>
+        <li class=""><a href="<%= cart_stickers_path %>">Cart <span class="new badge blue lighten-2"><%= @cart.total %></span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+  <div id="nav-bar" class="blue lighten-2">
     <% flash.each do |type, message| %>
       <p><%= content_tag(:div, message) %></p>
     <% end %>
-    <%= link_to "Cart", cart_stickers_path %>
   </div>
-
-  <%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
