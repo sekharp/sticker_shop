@@ -10,6 +10,10 @@ class Cart
     contents[sticker_id.to_s] += 1
   end
 
+  def subtract_sticker(sticker_id)
+    contents[sticker_id.to_s] -= 1
+  end
+
   def total_quantity
     contents.values.sum
   end
