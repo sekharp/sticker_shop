@@ -1,0 +1,21 @@
+<h1>Past Orders</h1>
+
+<table id='past-orders' class="highlight">
+  <thead>
+    <tr>
+      <th data-field="id">Order Number</th>
+      <th data-field="name">Date Ordered</th>
+      <th data-field="price">Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.created_at %></td>
+        <td><%= order.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
