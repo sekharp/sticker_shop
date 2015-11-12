@@ -25,6 +25,5 @@ class ViewingPastOrdersTest < ActionDispatch::IntegrationTest
     within("#past-orders") do
       assert page.has_content?("ordered")
     end
-    save_and_open_page
   end
 end
