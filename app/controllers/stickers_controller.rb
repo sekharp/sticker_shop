@@ -8,4 +8,8 @@ class StickersController < ApplicationController
     end
   end
 
+  def show
+    @sticker = Sticker.find(params[:id].to_i)
+  end
+
 end
