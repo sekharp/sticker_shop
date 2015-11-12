@@ -1,18 +1,19 @@
 <h1>Your Cart</h1>
+
 <div id="cart-contents">
   <ul class="collection">
     <% @cart.stickers.each do |cart_sticker| %>
-        <div class="collection-item">
+        <div class="collection-item bottom-margin-20">
           <img class="right thumbnail col s1" src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
           <h3 class="col s4"><%= cart_sticker.sticker.title %> sticker — $<%= cart_sticker.sticker.price %></h3>
           <p class=""><%= cart_sticker.sticker.description %></p>
           <h5 class="col s3"><b>Quantity:</b> <%= cart_sticker.quantity %></h5>
+          <h5 class="">Sticker Subtotal: $<%= cart_sticker.subtotal %></h5>
           <li class="right waves-effect waves-light btn grey lighten-4 grey-text"><%= link_to "Remove", cart_path(id: cart_sticker.sticker.id), method: :delete %></li>
           <div class="">
             <a class="col s3 btn-floating btn waves-effect waves-light grey lighten-4 grey-text"><%= button_to "+", cart_index_path(sticker_id: cart_sticker.sticker.id) %></a>
             <a class="col s3 btn-floating btn waves-effect waves-light grey lighten-4 grey-text"><%= button_to "-", cart_sticker_path(id: cart_sticker.sticker.id), method: :delete %></a>
           </div>
-          <h5 class="right">Sticker Subtotal: $<%= cart_sticker.subtotal %></h5>
         </div>
     <% end %>
   </ul>

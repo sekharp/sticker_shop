@@ -14,6 +14,8 @@ class Seed
     @javascript_category = Category.create(title: "javascript")
     @ruby_category = Category.create(title: "ruby")
     @browser_category = Category.create(title: "browser")
+    @git_category = Category.create(title: "git")
+    @editor_category = Category.create(title: "editor")
     puts "#{Category.all.map(&:title).join(", ")} categories created."
   end
 
@@ -34,6 +36,27 @@ class Seed
                                       image_url: "http://devstickers.com/assets/img/cat/chrome.png",
                                       price: 2,
                                       description: "Chrome logo")
+    @javascript_category.stickers.create(title: "Angularjs",
+                                         image_url: "http://devstickers.com/assets/img/cat/angularjs.png",
+                                         price: 3,
+                                         description: "Angular.js logo")
+    @javascript_category.stickers.create(title: "Javascript",
+                                         image_url: "http://devstickers.com/assets/img/cat/javascript.png",
+                                         price: 5,
+                                         description: "Javascript logo")
+    @git_category.stickers.create(title: "Git",
+                                   image_url: "http://devstickers.com/assets/img/cat/git.png",
+                                   price: 55,
+                                   description: "Git logo")
+    @editor_category.stickers.create(title: "Vim",
+                                      image_url: "http://devstickers.com/assets/img/pro/tnue.png",
+                                      price: 7,
+                                      description: "Vim logo")
+    @editor_category.stickers.create(title: "Atom",
+                                      image_url: "http://devstickers.com/assets/img/pro/iwyr.png",
+                                      price: 6,
+                                      description: "Atom logo")
+
     puts "#{Sticker.all.map(&:title).join(", ")} stickers created."
   end
 
