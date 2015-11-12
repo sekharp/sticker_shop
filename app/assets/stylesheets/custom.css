@@ -4,9 +4,15 @@
 .top-margin-40 {
   margin-top: 40px;
 }
+.bottom-margin-20 {
+  margin-bottom: 20px;
+}
 .alert {
   padding: 5px 20px;
 }
 .max-width{
   max-width: 300px;
+}
+.thumbnail {
+  max-width: 80px;
 }

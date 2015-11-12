@@ -50,7 +50,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
       assert page.has_content?("6")
       assert page.has_content?("Node.js logo")
       assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")
-      assert page.has_content?("Cart Total Price: $14")
+      assert page.has_content?("Total Price: $14")
     end
 
   end
