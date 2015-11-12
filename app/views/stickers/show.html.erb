@@ -1,8 +1,24 @@
-<div id="sticker-details">
-  <h1><%= @sticker.title %></h1>
-  <ul>
-    <li><%= @sticker.description %></li>
-    <li><%= @sticker.price %></li>
-    <img src="<%= @sticker.image_url %>" alt='<%= @sticker.title %>'/>
-  </ul>
+<div id="sticker-details" class="row">
+
+  <!-- <h1><%= @sticker.title %></h1> -->
+
+  <div class="divider"></div>
+
+  <div class="col s5">
+    <img class="max-width" src="<%= @sticker.image_url %>" alt='<%= @sticker.title %>'/>
+  </div>
+
+  <div class="col s6 top-margin-40">
+    <div class="card gray lighten-5">
+      <div class="card-content">
+        <span class="card-title"><%= @sticker.title %></span>
+        <span class="card-title right">$<%= @sticker.price %></span>
+        <p><%= @sticker.description %></p>
+      </div>
+      <div class="card-action">
+        <div class="waves-effect waves-light btn blue"><%= button_to "Add to Cart", cart_stickers_path(sticker_id: @sticker.id) %></div>
+      </div>
+    </div>
+  </div>
+
 </div>

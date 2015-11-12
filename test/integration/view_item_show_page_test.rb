@@ -9,7 +9,6 @@ class ItemShowPageTest < ActionDispatch::IntegrationTest
     visit categories_path
     click_link "Geeky"
     click_link "Node"
-    save_and_open_page
 
     within("#sticker-details") do
       assert page.has_content?("Node")
