@@ -1,23 +1,28 @@
+<h1>Your Cart</h1>
 <div id="cart-contents">
-  <ul>
+  <ul class="collection">
     <% @cart.stickers.each do |cart_sticker| %>
-      <li><%= cart_sticker.sticker.title %></li>
-      <li><%= cart_sticker.sticker.description %></li>
-
-      <li>Quantity: <%= cart_sticker.quantity %></li>
-      <a class="btn-floating btn waves-effect waves-light grey lighten-1"><%= button_to "+", cart_index_path(sticker_id: cart_sticker.sticker.id) %></a>
-      <a class="btn-floating btn waves-effect waves-light grey lighten-1"><%= button_to "-", cart_sticker_path(id: cart_sticker.sticker.id), method: :delete %></a>
-
-      <li><%= link_to "Remove", cart_path(id: cart_sticker.sticker.id), method: :delete %></li>
-
-      <li>Price: $<%= cart_sticker.sticker.price %></li>
-      <li>Sticker Subtotal: $<%= cart_sticker.subtotal %></li>
-      <img src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
+        <div class="collection-item">
+          <img class="right thumbnail col s1" src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
+          <h3 class="col s4"><%= cart_sticker.sticker.title %> sticker — $<%= cart_sticker.sticker.price %></h3>
+          <p class=""><%= cart_sticker.sticker.description %></p>
+          <h5 class="col s3"><b>Quantity:</b> <%= cart_sticker.quantity %></h5>
+          <li class="right waves-effect waves-light btn grey lighten-4 grey-text"><%= link_to "Remove", cart_path(id: cart_sticker.sticker.id), method: :delete %></li>
+          <div class="">
+            <a class="col s3 btn-floating btn waves-effect waves-light grey lighten-4 grey-text"><%= button_to "+", cart_index_path(sticker_id: cart_sticker.sticker.id) %></a>
+            <a class="col s3 btn-floating btn waves-effect waves-light grey lighten-4 grey-text"><%= button_to "-", cart_sticker_path(id: cart_sticker.sticker.id), method: :delete %></a>
+          </div>
+          <h5 class="right">Sticker Subtotal: $<%= cart_sticker.subtotal %></h5>
+        </div>
     <% end %>
   </ul>
 
-  <ul>
-    <li>Cart Quantity: <%= @cart.total_quantity %></li>
-    <li>Cart Total Price: $<%= @cart.total_price %></li>
-  </ul>
+  <h2 class="top-margin-40">Complete Your Order</h2>
+  <div class="collection">
+    <div class="collection-item">
+      <p><b>Stickers Ordered:</b> <%= @cart.total_quantity %></h5>
+      <h5><b>Total Price:</b> $<%= @cart.total_price %></h5></br>
+      <li class="bottom-margin-20 right waves-effect waves-light btn btn-large blue"><%= "Checkout" %></li>
+    </div>
+  </div>
 </div>
