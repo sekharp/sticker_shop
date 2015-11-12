@@ -1,6 +1,12 @@
 .side-margin-15 {
   margin: 0 15px 0 15px;
 }
+.top-margin-40 {
+  margin-top: 40px;
+}
 .alert {
   padding: 5px 20px;
+}
+.max-width{
+  max-width: 300px;
 }

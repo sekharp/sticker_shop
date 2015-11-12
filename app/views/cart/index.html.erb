@@ -5,8 +5,8 @@
       <li><%= cart_sticker.sticker.description %></li>
 
       <li>Quantity: <%= cart_sticker.quantity %></li>
-      <li><%= button_to "+", cart_index_path(sticker_id: cart_sticker.sticker.id) %></li>
-      <li><%= button_to "-", cart_sticker_path(id: cart_sticker.sticker.id), method: :delete %></li>
+      <a class="btn-floating btn waves-effect waves-light grey lighten-1"><%= button_to "+", cart_index_path(sticker_id: cart_sticker.sticker.id) %></a>
+      <a class="btn-floating btn waves-effect waves-light grey lighten-1"><%= button_to "-", cart_sticker_path(id: cart_sticker.sticker.id), method: :delete %></a>
 
       <li>Price: $<%= cart_sticker.sticker.price %></li>
       <li>Sticker Subtotal: $<%= cart_sticker.subtotal %></li>
