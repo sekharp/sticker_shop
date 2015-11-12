@@ -2,7 +2,7 @@
 
 <ul id = "stickers">
   <% @stickers.each do |sticker| %>
-    <li><%= sticker.title %></li>
+    <li><%= link_to sticker.title, sticker_path(sticker.id) %></li>
     <li>$<%= sticker.price %></li>
     <img src="<%= sticker.image_url %>" alt='<%= sticker.title %>'/>
   <% end %>
