@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :cart_stickers, only: [:create, :index, :destroy]
   resources :cart, only: [:index, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :orders, only: [:create, :index]
+  resources :orders, only: [:create, :index, :show]
   get '/login', to: "session#new"
   post '/login', to: "session#create"
   delete '/logout', to: "session#destroy"

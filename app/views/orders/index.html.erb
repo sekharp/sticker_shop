@@ -1,5 +1,4 @@
 <h1>Past Orders</h1>
-
 <table id='past-orders' class="highlight">
   <thead>
     <tr>
@@ -12,7 +11,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.id %></td>
+        <td><%= link_to order.id, order %></td>
         <td><%= order.created_at.strftime("%B %d, %Y") %></td>
         <td><%= order.status %></td>
       </tr>
