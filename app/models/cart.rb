@@ -11,7 +11,13 @@ class Cart
   end
 
   def subtract_sticker(sticker_id)
-    contents[sticker_id.to_s] -= 1
+    contents[sticker_id.to_s] -= 1 unless contents[sticker_id.to_s] < 1
+    # remove_sticker(sticker_id) if contents[sticker_id.to_s] < 1
+    # possible future implementation of removing item from cart once quantity is zero
+  end
+
+  def remove_sticker(sticker_id)
+    contents.delete(sticker_id.to_s)
   end
 
   def total_quantity
