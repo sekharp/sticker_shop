@@ -6,12 +6,15 @@ class Seed
   def generate
     create_categories
     create_stickers
+    create_users
+    create_orders
   end
 
   def create_categories
     @javascript_category = Category.create(title: "javascript")
     @ruby_category = Category.create(title: "ruby")
     @browser_category = Category.create(title: "browser")
+    puts "#{Category.all.map(&:title).join(", ")} categories created."
   end
 
   def create_stickers
@@ -31,7 +34,22 @@ class Seed
                                       image_url: "http://devstickers.com/assets/img/cat/chrome.png",
                                       price: 2,
                                       description: "Chrome logo")
-    puts "#{Sticker.all.map(&:title).join(", ")} created."
+    puts "#{Sticker.all.map(&:title).join(", ")} stickers created."
+  end
+
+  def create_users
+    @sekhar = User.create(first_name: "Sekhar", last_name: "Paladugu", username: "sekhar", password: "sekhar")
+    @emily = User.create(first_name: "Emily", last_name: "Dowdle", username: "emily", password: "emily")
+    @jason = User.create(first_name: "Jason", last_name: "Pilz", username: "jason", password: "jason")
+    puts "#{User.all.map(&:username).join(", ")} users created."
+  end
+
+  def create_orders
+    Order.create(status: "Ordered", user_id: @sekhar.id)
+    Order.create(status: "Paid", user_id: @sekhar.id)
+    Order.create(status: "Cancelled", user_id: @emily.id)
+    Order.create(status: "Completed", user_id: @jason.id)
+    puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
   end
 
 end
