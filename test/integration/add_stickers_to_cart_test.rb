@@ -24,6 +24,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
   end
 
   test "cart displays sticker information" do
+    skip
     Sticker.create(title: "Nodejs",
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,

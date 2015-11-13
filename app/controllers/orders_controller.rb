@@ -6,4 +6,6 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id].to_i)
   end
+
+  # create order completion PORO ?
 end

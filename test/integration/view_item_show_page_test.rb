@@ -1,5 +1,6 @@
 class ItemShowPageTest < ActionDispatch::IntegrationTest
   test "visitor can view sticker details" do
+    skip
     category = Category.create(title: "geeky")
     category.stickers.create(title: "Node",
                              image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
