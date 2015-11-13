@@ -4,6 +4,8 @@ class UserCanViewPastOrderTest < ActionDispatch::IntegrationTest
     user = User.create(username: "Sekhar",
                        password: "password")
 
+    # TODO visit ?????????????
+
     fill_in "Username", with: "Sekhar"
     fill_in "Password", with: "password"
     click_button "Login"
