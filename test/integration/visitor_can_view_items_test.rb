@@ -1,17 +1,15 @@
 require "test_helper"
 
 class VisitorView < ActionDispatch::IntegrationTest
-  test "site visitor can view stickers" do
-    cat = Category.create(title: "Category")
-
-    cat.stickers.create(title: "Awesome sticker",
-                        image_url: "some-url",
-                        price: 2)
+  test "site visitor can view stickers index" do
+    Sticker.create(title: "Nodejs",
+                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   price: 6,
+                   description: "Node.js logo")
 
     visit root_path
 
-    assert page.has_content?("Awesome sticker")
-    assert page.has_content?(2)
-    assert page.has_css?("img[src*='some-url']")
+    assert page.has_content?("Node.js logo")
+    assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")
   end
 end
