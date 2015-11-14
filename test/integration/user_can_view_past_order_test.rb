@@ -1,7 +1,10 @@
 class UserCanViewPastOrderTest < ActionDispatch::IntegrationTest
   test "past order view" do
+    skip
     user = User.create(username: "Sekhar",
                        password: "password")
+
+    # TODO visit ?????????????
 
     fill_in "Username", with: "Sekhar"
     fill_in "Password", with: "password"
@@ -26,7 +29,7 @@ class UserCanViewPastOrderTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Total Price: $6")
       assert page.has_content?("Sticker Subtotal: $6")
       assert page.has_content?("ordered")
-      assert page.has_content?("2015") # figure out how date comres across, should be the date the order was submitted
+      assert page.has_content?("2015") # figure out how date comes across, should be the date the order was submitted
       assert page.has_content?("Order Status") # needs to be completed or cancelled + when the order was completed or cancelled
     end
   end
