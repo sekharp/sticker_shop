@@ -12,7 +12,7 @@ class AuthenticatedUserPrivacyTest < ActionDispatch::IntegrationTest
     visit '/users'
     assert page.has_content?("Oops!")
 
-    visit '/user/1'
+    visit '/users/1'
     assert page.has_content?("Oops!")
 
     visit '/admin/dashboard'

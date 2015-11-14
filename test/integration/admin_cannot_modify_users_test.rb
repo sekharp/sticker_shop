@@ -28,6 +28,20 @@ class AdminCannotModifyOtherUsersDataTest < ActionDispatch::IntegrationTest
   end
 
   test "admin cannot modify other users account data" do
-    skip
+    admin = User.create(username: "Jason",
+                        password: "password",
+                        role: 1)
+    visit login_path
+    fill_in "Username", with: "Jason"
+    fill_in "Password", with: "password"
+    click_button "Login"
+
+    admin_id = admin.id
+
+    visit '/users'
+    assert page.has_content?("Oops!")
+
+    visit '/users/1'
+    assert page.has_content?("Oops!")
   end
 end
