@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114022109) do
+ActiveRecord::Schema.define(version: 20151114193643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +36,11 @@ ActiveRecord::Schema.define(version: 20151114022109) do
     t.string   "title"
     t.string   "image_url"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "category_id"
     t.text     "description"
+    t.boolean  "retired?",    default: false
   end
 
   add_index "stickers", ["category_id"], name: "index_stickers_on_category_id", using: :btree

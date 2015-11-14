@@ -1,7 +1,5 @@
 <div id="sticker-details" class="row">
 
-  <!-- <h1><%= @sticker.title %></h1> -->
-
   <div class="divider"></div>
 
   <div class="col s5">
@@ -13,10 +11,15 @@
       <div class="card-content">
         <span class="card-title"><%= @sticker.title %></span>
         <span class="card-title right">$<%= @sticker.price %></span>
+        <% if @sticker.retired? %>
+          <p class="card-title">(No longer available)</p>
+        <% end %>
         <p><%= @sticker.description %></p>
       </div>
       <div class="card-action">
-        <div class="waves-effect waves-light btn blue"><%= button_to "Add to Cart", cart_stickers_path(sticker_id: @sticker.id) %></div>
+        <% unless @sticker.retired? %>
+          <div class="waves-effect waves-light btn blue"><%= button_to "Add to Cart", cart_stickers_path(sticker_id: @sticker.id) %></div>
+        <% end %>
       </div>
     </div>
   </div>
