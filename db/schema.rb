@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114022109) do
+ActiveRecord::Schema.define(version: 20151114184730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20151114022109) do
     t.datetime "updated_at", null: false
     t.string   "slug"
   end
+
+  create_table "order_stickers", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "order_id"
+    t.integer  "sticker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_stickers", ["order_id"], name: "index_order_stickers_on_order_id", using: :btree
+  add_index "order_stickers", ["sticker_id"], name: "index_order_stickers_on_sticker_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.string   "status"
@@ -54,6 +65,8 @@ ActiveRecord::Schema.define(version: 20151114022109) do
     t.integer  "role",            default: 0
   end
 
+  add_foreign_key "order_stickers", "orders"
+  add_foreign_key "order_stickers", "stickers"
   add_foreign_key "orders", "users"
   add_foreign_key "stickers", "categories"
 end

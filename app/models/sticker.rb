@@ -4,6 +4,7 @@ class Sticker < ActiveRecord::Base
   validates :image_url, presence: true
 
   belongs_to :category
+  has_many :order_stickers
 
   def self.cart_items(raw_ids)
     if raw_ids.nil?

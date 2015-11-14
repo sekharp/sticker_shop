@@ -1,10 +1,5 @@
 require 'test_helper'
 
-# Background: An existing user that has multiple orders
-#       As an Authenticated User
-#       When I visit "/orders"
-#       Then I should see all orders belonging to me
-
 class ViewingPastOrdersTest < ActionDispatch::IntegrationTest
   test "authenticated user can see past orders" do
     user = User.create(username: "Sekhar",
