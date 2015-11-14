@@ -8,7 +8,6 @@ class ItemShowPageTest < ActionDispatch::IntegrationTest
 
     visit categories_path
     click_link "Geeky"
-    save_and_open_page
     click_link "Nodejs-link"
 
     within("#sticker-details") do
