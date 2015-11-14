@@ -23,7 +23,7 @@
     <div class="collection-item">
       <p><b>Stickers Ordered:</b> <%= @cart.total_quantity %></h5>
       <h5><b>Total Price:</b> $<%= @cart.total_price %></h5></br>
-      <li class="bottom-margin-20 right waves-effect waves-light btn btn-large blue"><%= "Checkout" %></li>
+      <li class="bottom-margin-20 right waves-effect waves-light btn btn-large blue"><%= button_to "Checkout", checkout_path %></li>
     </div>
   </div>
 </div>
