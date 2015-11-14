@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :dashboard, only: [:index]
   end
+
+  get '*unmatched_route', to: 'application#not_found'
 end
