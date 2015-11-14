@@ -29,5 +29,4 @@ class UsersController < ApplicationController
                                  :username,
                                  :password)
   end
-
 end
