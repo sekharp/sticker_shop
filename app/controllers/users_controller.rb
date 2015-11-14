@@ -18,10 +18,26 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = set_user
+  end
+
+  def edit
+    @user = set_user
+  end
+
+  def update
+    @user = set_user
+    @user.update(user_params)
+
+    flash.notice = "Profile Updated!"
+    redirect_to dashboard_path
   end
 
   private
+
+  def set_user
+    User.find(session[:user_id])
+  end
 
   def user_params
     params.require(:user).permit(:first_name,
@@ -29,5 +45,4 @@ class UsersController < ApplicationController
                                  :username,
                                  :password)
   end
-
 end

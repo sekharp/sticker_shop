@@ -10,4 +10,8 @@
     <strong>Username: </strong><%= @user.username %>
   </p>
 
+  <div id='user-<%= @user.id %>-button' class="waves-effect waves-light btn blue">
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
+  </div>
+
 </div>
