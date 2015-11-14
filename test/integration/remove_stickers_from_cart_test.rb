@@ -8,7 +8,7 @@ class RemoveItemsFromCartTest < ActionDispatch::IntegrationTest
                    description: "Node.js logo")
 
     visit root_path
-
+    save_and_open_page
     click_button "Add to Cart"
     click_button "Add to Cart"
 
