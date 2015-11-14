@@ -3,9 +3,12 @@
 <div id="cart-contents">
   <ul class="collection">
     <% @cart.stickers.each do |cart_sticker| %>
-        <div class="collection-item bottom-margin-20">
+        <div class="collection-item bottom-margin-20" id="<%= cart_sticker.sticker.title %>-button">
           <img class="right thumbnail col s1" src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
           <h3 class="col s4"><%= cart_sticker.sticker.title %> sticker — $<%= cart_sticker.sticker.price %></h3>
+          <% if cart_sticker.sticker.retired? %>
+            <p class="grey-text">(No longer available)</p>
+          <% end %>
           <p class=""><%= cart_sticker.sticker.description %></p>
           <h5 class="col s3"><b>Quantity:</b> <%= cart_sticker.quantity %></h5>
           <h5 class="">Sticker Subtotal: $<%= cart_sticker.subtotal %></h5>
@@ -23,7 +26,7 @@
     <div class="collection-item">
       <p><b>Stickers Ordered:</b> <%= @cart.total_quantity %></h5>
       <h5><b>Total Price:</b> $<%= @cart.total_price %></h5></br>
-      <li class="bottom-margin-20 right waves-effect waves-light btn btn-large blue"><%= "Checkout" %></li>
+      <li class="bottom-margin-20 right waves-effect waves-light btn btn-large blue"><%= button_to "Checkout", checkout_path %></li>
     </div>
   </div>
 </div>
