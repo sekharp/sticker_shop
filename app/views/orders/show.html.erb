@@ -5,4 +5,28 @@
   <p><b>Date ordered: </b><%= @order.created_at.strftime("%B %d, %Y") %></p>
   <p><b>Status: </b><%= @order.status.capitalize %></p>
 
+<% @order.order_stickers.each do |os| %>
+  <h3><b>Sticker: </b><a href="<%= sticker_path(os.sticker.id) %>"><%= os.sticker.title %></a></h3>
+  <p><b>Sticker Price: </b>$<%= os.sticker.price %></p>
+  <p><b>Quantity: </b><%= os.quantity %></p>
+  <p><b>Sticker Subtotal: </b>$<%= os.sticker.price * os.quantity %></p>
+<% end %>
+
+  <h2>Order Info</h2>
+  <p><b>Status: </b><%= @order.status %></p>
+  <p><b>Total Price: </b>$<%= @order.order_stickers.map { |os| os.sticker.price * os.quantity }.sum %></p>
+  <p><b>Order Created At: </b><%= @order.created_at.strftime("%B %d, %Y at %H:%M:%S") %></p>
+  <p><b>Status of Order Completion or Cancellation: </b>
+    <% if @order.status.include?("Completed") || @order.status.include?("Cancelled") %>
+    <%= "Order Finished" %>
+    <% else %>
+    <%= "Order Not Finished" %></p>
+    <% end %>
+  <p><b>Timestamp of Completion or Cancellation: </b>
+    <% if @order.status.include?("Completed") || @order.status.include?("Cancelled") %>
+    <%= @order.updated_at.strftime("%B %d, %Y at %H:%M:%S") %>
+    <% else %>
+    <%= "N/A" %></p>
+    <% end %>
+
 </div>

@@ -1,36 +1,36 @@
 class UserCanViewPastOrderTest < ActionDispatch::IntegrationTest
   test "past order view" do
-    skip
     user = User.create(username: "Sekhar",
                        password: "password")
+    sticker = Sticker.create(title: "Nodejs",
+                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                             price: 6,
+                             description: "Node.js logo")
+    order = user.orders.create(status: "Ordered")
+    order_sticker = OrderSticker.create(order_id: order.id,
+                                        sticker_id: sticker.id,
+                                        quantity: 1)
 
-    # TODO visit ?????????????
+    visit login_path
 
     fill_in "Username", with: "Sekhar"
     fill_in "Password", with: "password"
     click_button "Login"
 
-    sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
-                             price: 6,
-                             description: "Node.js logo")
-
-    visit root_path
-    click_button "Add to Cart"
-    click_link "Cart"
-    click_link "Order"
     visit "/orders"
+    click_link "#{order.id}"
 
-    within("#order-history") do
-      assert page.has_content?("Past Orders")
-      assert page.has_content?("Nodejs")
-      assert page.has_link?(sticker_path(sticker.id))
+    within("#order-details") do
+      assert page.has_content?("Sticker: Nodejs")
       assert page.has_content?("Quantity: 1")
-      assert page.has_content?("Total Price: $6")
+      assert page.has_content?("Sticker Price: $6")
       assert page.has_content?("Sticker Subtotal: $6")
-      assert page.has_content?("ordered")
-      assert page.has_content?("2015") # figure out how date comes across, should be the date the order was submitted
-      assert page.has_content?("Order Status") # needs to be completed or cancelled + when the order was completed or cancelled
+
+      assert page.has_content?("Status: Ordered")
+      assert page.has_content?("Total Price: $6")
+      assert page.has_content?("Order Created At: #{order.created_at.strftime("%B %d, %Y at %H:%M:%S")}")
+      assert page.has_content?("Status of Order Completion or Cancellation: Order Not Finished")
+      assert page.has_content?("Timestamp of Completion or Cancellation: N/A")
     end
   end
 end
