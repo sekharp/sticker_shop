@@ -7,6 +7,7 @@
 
 <% @order.order_stickers.each do |os| %>
   <h3><b>Sticker: </b><a href="<%= sticker_path(os.sticker.id) %>"><%= os.sticker.title %></a></h3>
+  <img class="max-width" src="<%= os.sticker.image_url %>" alt='<%= os.sticker.title %>'/>
   <p><b>Sticker Price: </b>$<%= os.sticker.price %></p>
   <p><b>Quantity: </b><%= os.quantity %></p>
   <p><b>Sticker Subtotal: </b>$<%= os.sticker.price * os.quantity %></p>

@@ -8,6 +8,7 @@ class Seed
     create_stickers
     create_users
     create_orders
+    create_order_stickers
   end
 
   def create_categories
@@ -20,15 +21,15 @@ class Seed
   end
 
   def create_stickers
-    @javascript_category.stickers.create(title: "Nodejs",
+    @nodejs_sticker = @javascript_category.stickers.create(title: "Nodejs",
                                          image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                                          price: 6,
                                          description: "Node.js logo")
-    @javascript_category.stickers.create(title: "Reactjs",
+    @reactjs_sticker = @javascript_category.stickers.create(title: "Reactjs",
                                          image_url: "http://devstickers.com/assets/img/cat/react-js.png",
                                          price: 8,
                                          description: "React.js logo")
-    @ruby_category.stickers.create(title: "Ruby",
+    @ruby_sticker = @ruby_category.stickers.create(title: "Ruby",
                                    image_url: "http://devstickers.com/assets/img/cat/ruby.png",
                                    price: 82,
                                    description: "Ruby logo")
@@ -70,11 +71,17 @@ class Seed
   end
 
   def create_orders
-    Order.create(status: "Ordered", user_id: @sekhar.id)
-    Order.create(status: "Paid", user_id: @sekhar.id)
-    Order.create(status: "Cancelled", user_id: @emily.id)
-    Order.create(status: "Completed", user_id: @jason.id)
+    @order_1 = Order.create(status: "Ordered", user_id: @sekhar.id)
+    @order_2 = Order.create(status: "Paid", user_id: @sekhar.id)
+    @order_3 = Order.create(status: "Cancelled", user_id: @emily.id)
+    @order_4 = Order.create(status: "Completed", user_id: @jason.id)
     puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
+  end
+
+  def create_order_stickers
+    OrderSticker.create(quantity: 3, order_id: @order_1.id, sticker_id: @nodejs_sticker.id)
+    OrderSticker.create(quantity: 2, order_id: @order_1.id, sticker_id: @reactjs_sticker.id)
+    OrderSticker.create(quantity: 5, order_id: @order_2.id, sticker_id: @ruby_sticker.id)
   end
 
 end
