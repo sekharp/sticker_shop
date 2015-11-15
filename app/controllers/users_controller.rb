@@ -18,15 +18,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = set_user
+    @user = current_user
   end
 
   def edit
-    @user = set_user
+    @user = current_user
   end
 
   def update
-    @user = set_user
+    @user = current_user
     @user.update(user_params)
 
     flash.notice = "Profile Updated!"
@@ -34,10 +34,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def set_user
-    User.find(session[:user_id])
-  end
 
   def user_params
     params.require(:user).permit(:first_name,
