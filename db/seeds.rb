@@ -64,7 +64,7 @@ class Seed
     @sekhar = User.create(first_name: "Sekhar", last_name: "Paladugu", username: "sekhar", password: "sekhar", role: 1)
     @emily = User.create(first_name: "Emily", last_name: "Dowdle", username: "emily", password: "emily", role: 1)
     @jason = User.create(first_name: "Jason", last_name: "Pilz", username: "jason", password: "jason", role: 1)
-    User.create(first_name: "Brittany", last_name: "Spears", username: "brittanyspears", password: "oopsididitagain")
+    User.create(first_name: "Britney", last_name: "Spears", username: "britneyspears", password: "oopsididitagain")
     User.create(first_name: "Snoop", last_name: "Dogg", username: "snoopdogg", password: "momma")
     puts "#{User.all.map(&:username).join(", ")} users created."
   end
