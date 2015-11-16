@@ -21,6 +21,7 @@
         <li><%= link_to "Stickers", stickers_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
         <% if current_user %>
+          <li><%= link_to "Profile", dashboard_path %></li>
           <li><%= link_to "Logout", logout_path , method: :delete %></li>
         <% else %>
           <li><%= link_to "Login", login_path %></li>
