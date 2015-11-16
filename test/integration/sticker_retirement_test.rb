@@ -39,7 +39,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                    description: "Node.js logo",
                    retired?: true)
 
-    user = User.create(username: "Sekhar",
+    User.create(username: "Sekhar",
                        password: "password")
 
     visit login_path

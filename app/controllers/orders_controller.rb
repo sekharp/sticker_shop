@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
     current_user ? @orders = current_user.orders : @orders = {}
   end
 
-  def new
+  def create
     if session[:user_id].nil?
       redirect_to '/login'
     else

@@ -1,9 +1,9 @@
 class UserCanCheckoutAndPlaceOrderTest < ActionDispatch::IntegrationTest
 
   test "visitor will be asked to login when trying to checkout" do
-    sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
-                             price: 6)
+    Sticker.create(title: "Nodejs",
+                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   price: 6)
 
     visit root_path
     click_button "Add to Cart"
@@ -21,12 +21,12 @@ class UserCanCheckoutAndPlaceOrderTest < ActionDispatch::IntegrationTest
   end
 
   test "user can checkout and place order" do
-    user = User.create(username: "Sekhar",
-                       password: "password")
+    User.create(username: "Sekhar",
+                password: "password")
 
-    sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
-                             price: 6)
+    Sticker.create(title: "Nodejs",
+                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   price: 6)
 
     visit login_path
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: "users#show"
   get '/dashboard/edit', to: "users#edit"
   put '/dashboard', to: "users#update"
-  post '/checkout', to: "orders#new"
+  post '/checkout', to: "orders#create"
 
   namespace :admin do
     resources :dashboard, only: [:index]
