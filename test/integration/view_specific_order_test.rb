@@ -1,6 +1,6 @@
 class ViewSpecificOrderTest < ActionDispatch::IntegrationTest
   test "authenticated user can see specific past order" do
-    User.create(username: "Sekhar",
+    user = User.create(username: "Sekhar",
                 password: "password")
     visit root_path
     click_link "Login"

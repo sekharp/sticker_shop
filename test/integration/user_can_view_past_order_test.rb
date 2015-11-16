@@ -1,6 +1,6 @@
 class UserCanViewPastOrderTest < ActionDispatch::IntegrationTest
   test "past order view" do
-    User.create(username: "Sekhar",
+    user = User.create(username: "Sekhar",
                        password: "password")
     sticker = Sticker.create(title: "Nodejs",
                              image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
