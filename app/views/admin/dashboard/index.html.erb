@@ -1,1 +1,33 @@
 <h1>Admin Dashboard</h1>
+
+<h3>Snapshot</h3>
+
+  <ul>
+    <li>Ordered(<%= Order.group(:status).count["ordered"] %>)</li>
+    <li>Paid(<%= Order.group(:status).count["paid"] %>)</li>
+    <li>Completed(<%= Order.group(:status).count["completed"] %>)</li>
+    <li>Cancelled(<%= Order.group(:status).count["cancelled"] %>)</li>
+  </ul>
+<h3>Orders</h3>
+
+<table id='past-orders' class="highlight">
+  <thead>
+    <tr>
+      <th data-field="id">Order Number</th>
+      <th data-field="name">Date Ordered</th>
+      <th data-field="price">Status</th>
+      <th data-field="price">Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Order.all.each do |order| %>
+      <tr>
+        <td><%= link_to order.id, order %></td>
+        <td><%= order.created_at.strftime("%B %d, %Y") %></td>
+        <td><%= order.status %></td>
+        <td><%= "Order includes item(s) no longer available." if order.order_stickers.map { |os| os.sticker.retired? }.include?(true) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
