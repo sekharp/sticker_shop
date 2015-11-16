@@ -1,6 +1,6 @@
-class VisitorCartQuantityChangesTest < ActionDispatch::IntegrationTest
+class UserCanCheckoutAndPlaceOrderTest < ActionDispatch::IntegrationTest
 
-  test "visitor can increase item quantity in cart" do
+  test "visitor will be asked to login when trying to checkout" do
     sticker = Sticker.create(title: "Nodejs",
                              image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6)
@@ -13,17 +13,26 @@ class VisitorCartQuantityChangesTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Nodejs")
     assert page.has_content?("Quantity: 1")
 
-    click_button "+"
+    click_button "Checkout"
 
-    assert page.has_content?("Nodejs")
-    assert page.has_content?("Quantity: 2")
-    assert page.has_content?("Sticker added to cart")
+    assert page.has_content?("Login")
+    assert page.has_content?("Username")
+    assert page.has_content?("Password")
   end
 
-  test "visitor can decrease item quantity in cart" do
+  test "user can checkout and place order" do
+    user = User.create(username: "Sekhar",
+                       password: "password")
+
     sticker = Sticker.create(title: "Nodejs",
                              image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6)
+
+    visit login_path
+
+    fill_in "Username", with: "Sekhar"
+    fill_in "Password", with: "password"
+    click_button "Login"
 
     visit root_path
     click_button "Add to Cart"
@@ -34,11 +43,12 @@ class VisitorCartQuantityChangesTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Nodejs")
     assert page.has_content?("Quantity: 2")
 
-    click_button "-"
+    click_button "Checkout"
 
-    assert page.has_content?("Nodejs")
-    assert page.has_content?("Quantity: 1")
-    assert page.has_content?("Sticker removed from cart")
+    assert page.has_content?("Past Orders")
+
+    within("#past-orders") do
+      assert page.has_content?("Ordered")
+    end
   end
-
 end
