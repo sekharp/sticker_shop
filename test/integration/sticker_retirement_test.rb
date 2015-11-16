@@ -59,7 +59,6 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
 
     within("#past-orders") do
       assert page.has_content?("Ordered")
-      assert page.has_content?("Order includes item(s) no longer available.")
     end
   end
 
