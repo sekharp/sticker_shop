@@ -4,13 +4,13 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                 password: "password")
 
     Sticker.create(title: "Nodejs",
-                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo",
                    retired?: true)
 
     Sticker.create(title: "Reactjs",
-                   image_url: "http://devstickers.com/assets/img/cat/react-js.png",
+                   image: "http://devstickers.com/assets/img/cat/react-js.png",
                    description: "React.js logo",
                    price: 3,
                    retired?: false)
@@ -38,13 +38,13 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                 password: "password")
 
     Sticker.create(title: "Nodejs",
-                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo",
                    retired?: true)
 
     Sticker.create(title: "Reactjs",
-                   image_url: "http://devstickers.com/assets/img/cat/react-js.png",
+                   image: "http://devstickers.com/assets/img/cat/react-js.png",
                    description: "React.js logo",
                    price: 3,
                    retired?: false)
@@ -69,7 +69,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
 
   test "retired stickers have show pages" do
     sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6,
                              description: "Node.js logo",
                              retired?: true)
@@ -80,7 +80,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
 
   test "retired stickers cannot be added to cart" do
     sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6,
                              description: "Node.js logo",
                              retired?: true)

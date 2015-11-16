@@ -4,7 +4,7 @@
   <ul class="collection">
     <% @cart.stickers.each do |cart_sticker| %>
         <div class="collection-item bottom-margin-20" id="<%= cart_sticker.sticker.title %>-button">
-          <img class="right thumbnail col s1" src="<%= cart_sticker.sticker.image_url %>" alt='<%= cart_sticker.sticker.title %>'/>
+          <img class="right thumbnail col s1" src="<%= cart_sticker.sticker.image.url %>" alt='<%= cart_sticker.sticker.title %>'/>
           <h3 class="col s4"><%= cart_sticker.sticker.title %> sticker — $<%= cart_sticker.sticker.price %></h3>
           <% if cart_sticker.sticker.retired? %>
             <p class="grey-text">(No longer available)</p>

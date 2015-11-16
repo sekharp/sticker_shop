@@ -17,7 +17,7 @@ class VisitorCartQuantityChangesTest < ActionDispatch::IntegrationTest
 
   test "visitor can increase item quantity in cart" do
     sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6)
 
     visit root_path
@@ -37,7 +37,7 @@ class VisitorCartQuantityChangesTest < ActionDispatch::IntegrationTest
 
   test "visitor can decrease item quantity in cart" do
     sticker = Sticker.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6)
 
     visit root_path
