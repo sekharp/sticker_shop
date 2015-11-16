@@ -7,13 +7,13 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo",
-                   retired?: true)
+                   retired: true)
 
     Sticker.create(title: "Reactjs",
                    image_url: "http://devstickers.com/assets/img/cat/react-js.png",
                    description: "React.js logo",
                    price: 3,
-                   retired?: false)
+                   retired: false)
 
     visit root_path
     within("#Nodejs-button") do
@@ -37,10 +37,10 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                    image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo",
-                   retired?: true)
+                   retired: true)
 
     User.create(username: "Sekhar",
-                       password: "password")
+                password: "password")
 
     visit login_path
 
@@ -68,7 +68,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                              image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6,
                              description: "Node.js logo",
-                             retired?: true)
+                             retired: true)
 
     visit sticker_path(sticker.id)
     assert page.has_content?("No longer available")
@@ -79,7 +79,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                              image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6,
                              description: "Node.js logo",
-                             retired?: true)
+                             retired: true)
 
     visit sticker_path(sticker.id)
 
