@@ -1,11 +1,11 @@
 # As an authenticated Admin:
-#       I can create an item.
-#         - An item must have a title, description and price.
-#         - An item must belong to at least one category.
-#         - The title and description cannot be empty.
-#         - The title must be unique for all items in the system.
-#         - The price must be a valid decimal numeric value and greater than zero.
-#         - The photo is optional. If not present, a stand-in photo is used.
+#       _X_ I can create an item.
+#         _X_ An item must have a title, description and price.
+#         _X_ An item must belong to at least one category.
+#         _X_ The title and description cannot be empty.
+#         _X_ The title must be unique for all items in the system.
+#         OOO The price must be a valid decimal numeric value and greater than zero.
+#         _X_ The photo is optional. If not present, a stand-in photo is used.
 
 require "test_helper"
 
@@ -34,5 +34,12 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
     click_button "Create Sticker"
 
     assert stickers_path, current_path
+    within("#nav-bar") do
+      assert page.has_content?("NEW STICKER sticker created")
+    end
+    within(".container") do
+      assert page.has_content?("New sticker description")
+    end
   end
+
 end
