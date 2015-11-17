@@ -5,15 +5,15 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
     company_category = Category.create(title: "Companies")
     product_category = Category.create(title: "Products")
 
-    company_category.stickers.create(title: "Node.js",
-                                     image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
-                                     description: "Node.js logo",
-                                     price: 2)
+    c_sticker = company_category.stickers.create(title: "Node.js",
+                                                 image: "http://devstickers.com/assets/img/cat/nodejs.png",
+                                                 description: "Node.js logo",
+                                                 price: 2)
 
-    product_category.stickers.create(title: "React.js",
-                                     image_url: "http://devstickers.com/assets/img/cat/react-js.png",
-                                     description: "React.js logo",
-                                     price: 3)
+    p_sticker = product_category.stickers.create(title: "React.js",
+                                                 image: "http://devstickers.com/assets/img/cat/react-js.png",
+                                                 description: "React.js logo",
+                                                 price: 3)
 
     visit categories_path
 
@@ -21,7 +21,7 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
 
     assert_current_path category_path(company_category)
     within "#stickers" do
-      assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/nodejs.png']")
+      assert page.has_css?("img[src*='#{c_sticker.image.url}']")
       assert page.has_content?("Node.js logo")
       refute page.has_content?("React.js logo")
     end
@@ -33,7 +33,7 @@ class VisitorViewsItemsByCategoryTest < ActionDispatch::IntegrationTest
     within "#stickers" do
       assert page.has_content? "React.js logo"
       refute page.has_content? "Node.js logo"
-      assert page.has_css?("img[src*='http://devstickers.com/assets/img/cat/react-js.png']")
+      assert page.has_css?("img[src*='#{p_sticker.image.url}']")
     end
   end
 end

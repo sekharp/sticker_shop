@@ -2,7 +2,7 @@ class ItemShowPageTest < ActionDispatch::IntegrationTest
   test "visitor can view sticker details" do
     category = Category.create(title: "geeky")
     category.stickers.create(title: "Nodejs",
-                             image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              description: "Awesome Node.js sticker",
                              price: 2)
 

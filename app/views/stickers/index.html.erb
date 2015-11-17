@@ -11,13 +11,15 @@
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
-          <a href="<%= sticker_path(sticker.id) %>"><img class="max-width" src="<%= sticker.image_url %>"></a>
+          <a href="<%= sticker_path(sticker.id) %>"><img class="max-width" src="<%= sticker.image.url(:original) %>"></a>
         </div>
         <div class="card-content">
           <p><%= sticker.description %></p>
         </div>
         <div class="card-action">
-          <div id='<%= sticker.title %>-button' class="waves-effect waves-light btn blue"><%= button_to "Add to Cart", cart_stickers_path(sticker_id: sticker.id) %></div>
+          <div id='<%= sticker.title %>-button' class="waves-effect waves-light btn blue">
+            <%= button_to "Add to Cart", cart_stickers_path(sticker_id: sticker.id) %>
+          </div>
         </div>
       </div>
     </div>

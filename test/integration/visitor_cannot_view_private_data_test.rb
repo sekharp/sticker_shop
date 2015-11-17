@@ -17,7 +17,7 @@ class AuthenticatedUserPrivacyTest < ActionDispatch::IntegrationTest
 
   test "visitor is redirected to login before checkout" do
     Sticker.create(title: "Nodejs",
-                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo")
 
