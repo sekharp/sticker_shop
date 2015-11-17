@@ -39,6 +39,7 @@ group :development, :test do
   gem 'mrspec'
   gem 'mocha'
   gem 'capybara'
+  gem 'simplecov'
 end
 
 group :development do

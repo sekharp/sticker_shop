@@ -1,12 +1,3 @@
-# As an authenticated Admin:
-#       _X_ I can create an item.
-#         _X_ An item must have a title, description and price.
-#         _X_ An item must belong to at least one category.
-#         _X_ The title and description cannot be empty.
-#         _X_ The title must be unique for all items in the system.
-#         OOO The price must be a valid decimal numeric value and greater than zero.
-#         _X_ The photo is optional. If not present, a stand-in photo is used.
-
 require "test_helper"
 
 class AdminStickerCreationTest < ActionDispatch::IntegrationTest
