@@ -16,7 +16,7 @@ class StickerTest < ActiveSupport::TestCase
     assert sticker.invalid?
   end
 
-  test "is valid without image url" do
+  test "default image is valid" do
     sticker = Sticker.new(title: "Node.js",
                           price: 6)
 
