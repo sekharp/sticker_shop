@@ -12,8 +12,7 @@ class Cart
 
   def subtract_sticker(sticker_id)
     contents[sticker_id.to_s] -= 1 unless contents[sticker_id.to_s] < 1
-    # remove_sticker(sticker_id) if contents[sticker_id.to_s] < 1
-    # possible future implementation of removing item from cart once quantity is zero
+    remove_sticker(sticker_id) if contents[sticker_id.to_s] < 1
   end
 
   def remove_sticker(sticker_id)
@@ -26,7 +25,7 @@ class Cart
 
   def total_price
     subtotals = stickers.map do |cart_sticker|
-      cart_sticker.quantity * cart_sticker.sticker.price
+      cart_sticker.quantity * cart_sticker.price
     end
     subtotals.sum
   end

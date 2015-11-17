@@ -8,6 +8,7 @@ class Seed
     create_stickers
     create_users
     create_orders
+    create_order_stickers
   end
 
   def create_categories
@@ -20,15 +21,15 @@ class Seed
   end
 
   def create_stickers
-    @javascript_category.stickers.create(title: "Nodejs",
+    @nodejs_sticker = @javascript_category.stickers.create(title: "Nodejs",
                                          image: "http://devstickers.com/assets/img/cat/nodejs.png",
                                          price: 6,
                                          description: "Node.js logo")
-    @javascript_category.stickers.create(title: "Reactjs",
+    @reactjs_sticker = @javascript_category.stickers.create(title: "Reactjs",
                                          image: "http://devstickers.com/assets/img/cat/react-js.png",
                                          price: 8,
                                          description: "React.js logo")
-    @ruby_category.stickers.create(title: "Ruby",
+    @ruby_sticker = @ruby_category.stickers.create(title: "Ruby",
                                    image: "http://devstickers.com/assets/img/cat/ruby.png",
                                    price: 82,
                                    description: "Ruby logo")
@@ -64,19 +65,24 @@ class Seed
     @sekhar = User.create(first_name: "Sekhar", last_name: "Paladugu", username: "sekhar", password: "sekhar", role: 1)
     @emily = User.create(first_name: "Emily", last_name: "Dowdle", username: "emily", password: "emily", role: 1)
     @jason = User.create(first_name: "Jason", last_name: "Pilz", username: "jason", password: "jason", role: 1)
-    User.create(first_name: "Brittany", last_name: "Spears", username: "brittanyspears", password: "oopsididitagain")
+    User.create(first_name: "Britney", last_name: "Spears", username: "britneyspears", password: "oopsididitagain")
     User.create(first_name: "Snoop", last_name: "Dogg", username: "snoopdogg", password: "momma")
     puts "#{User.all.map(&:username).join(", ")} users created."
   end
 
   def create_orders
-    Order.create(status: "Ordered", user_id: @sekhar.id)
-    Order.create(status: "Paid", user_id: @sekhar.id)
-    Order.create(status: "Cancelled", user_id: @emily.id)
-    Order.create(status: "Completed", user_id: @jason.id)
+    @order_1 = Order.create(status: "Ordered", user_id: @sekhar.id)
+    @order_2 = Order.create(status: "Paid", user_id: @sekhar.id)
+    @order_3 = Order.create(status: "Cancelled", user_id: @emily.id)
+    @order_4 = Order.create(status: "Completed", user_id: @jason.id)
     puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
   end
 
+  def create_order_stickers
+    OrderSticker.create(quantity: 3, order_id: @order_1.id, sticker_id: @nodejs_sticker.id)
+    OrderSticker.create(quantity: 2, order_id: @order_1.id, sticker_id: @reactjs_sticker.id)
+    OrderSticker.create(quantity: 5, order_id: @order_2.id, sticker_id: @ruby_sticker.id)
+  end
 end
 
 Seed.start

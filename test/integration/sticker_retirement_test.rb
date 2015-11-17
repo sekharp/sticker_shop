@@ -7,13 +7,13 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                    image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo",
-                   retired?: true)
+                   retired: true)
 
     Sticker.create(title: "Reactjs",
                    image: "http://devstickers.com/assets/img/cat/react-js.png",
                    description: "React.js logo",
                    price: 3,
-                   retired?: false)
+                   retired: false)
 
     visit root_path
     within("#Nodejs-button") do
@@ -33,38 +33,33 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
   end
 
   test "user order page shows retired stickers" do
-    skip
-    User.create(username: "Jason",
-                password: "password")
-
     Sticker.create(title: "Nodejs",
                    image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo",
-                   retired?: true)
+                   retired: true)
 
-    Sticker.create(title: "Reactjs",
-                   image: "http://devstickers.com/assets/img/cat/react-js.png",
-                   description: "React.js logo",
-                   price: 3,
-                   retired?: false)
+    User.create(username: "Sekhar",
+                password: "password")
 
-    #  CREATE ORDER HERE AND ENSURE ORDER PAGE SHOWS RETIRED STICKERS
-    # visit root_path
-    # within("#Nodejs-button") do
-    #   click_button "Add to Cart"
-    # end
-    # within("#Reactjs-button") do
-    #   click_button "Add to Cart"
-    # end
-    # click_link "Cart"
-    #
-    # within("#Nodejs-button") do
-    #   assert page.has_content?("No longer available")
-    # end
-    # within("#Reactjs-button") do
-    #   refute page.has_content?("No longer available")
-    # end
+    visit login_path
+
+    fill_in "Username", with: "Sekhar"
+    fill_in "Password", with: "password"
+    click_button "Login"
+
+    visit root_path
+    click_button "Add to Cart"
+    click_button "Add to Cart"
+
+    click_link "Cart"
+    click_button "Checkout"
+
+    assert page.has_content?("Past Orders")
+
+    within("#past-orders") do
+      assert page.has_content?("Ordered")
+    end
   end
 
   test "retired stickers have show pages" do
@@ -72,7 +67,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                              image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6,
                              description: "Node.js logo",
-                             retired?: true)
+                             retired: true)
 
     visit sticker_path(sticker.id)
     assert page.has_content?("No longer available")
@@ -83,7 +78,7 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
                              image: "http://devstickers.com/assets/img/cat/nodejs.png",
                              price: 6,
                              description: "Node.js logo",
-                             retired?: true)
+                             retired: true)
 
     visit sticker_path(sticker.id)
 
