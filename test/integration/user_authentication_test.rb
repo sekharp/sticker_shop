@@ -53,7 +53,7 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
                 password: "password")
 
     Sticker.create(title: "Node_js",
-                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo")
 
