@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-17T13:41:28-07:00">2015-11-17T13:41:28-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-17T14:47:33-07:00">2015-11-17T14:47:33-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.06%</span></span>
+    (<span class="covered_percent"><span class="green">98.09%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>55</b> files in total.
-    <b>671</b> relevant lines. 
-    <span class="green"><b>658</b> lines covered</span> and
+    <b>56</b> files in total.
+    <b>679</b> relevant lines. 
+    <span class="green"><b>666</b> lines covered</span> and
     <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,7 +57,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>5.3</td>
+        <td>5.5</td>
       </tr>
       
       <tr>
@@ -72,12 +72,12 @@
       
       <tr>
         <td class="strong"><a href="#2a6ffdcede21a55b9223096cb8f18310b98bf8f7" class="src_link" title="app/controllers/admin/stickers_controller.rb">app/controllers/admin/stickers_controller.rb</a></td>
-        <td class="yellow strong">80.95 %</td>
+        <td class="red strong">80.0 %</td>
         <td>33</td>
-        <td>21</td>
-        <td>17</td>
+        <td>20</td>
+        <td>16</td>
         <td>4</td>
-        <td>1.8</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>33.2</td>
+        <td>33.9</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>16</td>
         <td>14</td>
         <td>2</td>
-        <td>4.4</td>
+        <td>4.7</td>
       </tr>
       
       <tr>
@@ -177,7 +177,7 @@
         <td>24</td>
         <td>24</td>
         <td>0</td>
-        <td>20.8</td>
+        <td>21.0</td>
       </tr>
       
       <tr>
@@ -366,6 +366,16 @@
         <td>47</td>
         <td>29</td>
         <td>29</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#979924838eaad73c1e4ca5831bf737e8375a1d0d" class="src_link" title="test/integration/admin_edit_test.rb">test/integration/admin_edit_test.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>28</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -654,8 +664,8 @@
           <code class="ruby">  def require_admin</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="5">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="19" data-linenumber="5">
+          <span class="hits">19</span>
           
           <code class="ruby">    render file: &quot;/public/404&quot; unless current_admin?</code>
         </li>
@@ -721,10 +731,10 @@
         <div class="source_table" id="2a6ffdcede21a55b9223096cb8f18310b98bf8f7">
   <div class="header">
     <h3>app/controllers/admin/stickers_controller.rb</h3>
-    <h4><span class="yellow">80.95 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>20</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
@@ -744,10 +754,10 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="3">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">    @categories = Category.all.map { |cat| [cat.title, cat.id] }</code>
+          
+          <code class="ruby">    # @categories = Category.all.map { |cat| [cat.title, cat.id] }</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="4">
@@ -996,8 +1006,8 @@
           <code class="ruby">  def set_cart</code>
         </li>
       
-        <li class="covered" data-hits="167" data-linenumber="9">
-          <span class="hits">167</span>
+        <li class="covered" data-hits="170" data-linenumber="9">
+          <span class="hits">170</span>
           
           <code class="ruby">    @cart = Cart.new(session[:cart])</code>
         </li>
@@ -1020,8 +1030,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="172" data-linenumber="13">
-          <span class="hits">172</span>
+        <li class="covered" data-hits="176" data-linenumber="13">
+          <span class="hits">176</span>
           
           <code class="ruby">    @user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1044,8 +1054,8 @@
           <code class="ruby">  def current_admin?</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="17">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="19" data-linenumber="17">
+          <span class="hits">19</span>
           
           <code class="ruby">    current_user &amp;&amp; current_user.admin?</code>
         </li>
@@ -1680,26 +1690,26 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="7">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="7">
+          <span class="hits">15</span>
           
           <code class="ruby">    @user = User.find_by(username: params[:session][:username])</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="8">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="8">
+          <span class="hits">15</span>
           
           <code class="ruby">    if @user.admin? &amp;&amp; @user.authenticate(params[:session][:password])</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="9">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="9">
+          <span class="hits">7</span>
           
           <code class="ruby">      session[:user_id] = @user.id</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="10">
+          <span class="hits">7</span>
           
           <code class="ruby">      redirect_to admin_dashboard_index_path</code>
         </li>
@@ -2250,8 +2260,8 @@
           <code class="ruby">  def initialize(contents)</code>
         </li>
       
-        <li class="covered" data-hits="171" data-linenumber="5">
-          <span class="hits">171</span>
+        <li class="covered" data-hits="174" data-linenumber="5">
+          <span class="hits">174</span>
           
           <code class="ruby">    @contents = contents || {}</code>
         </li>
@@ -2358,8 +2368,8 @@
           <code class="ruby">  def total_quantity</code>
         </li>
       
-        <li class="covered" data-hits="137" data-linenumber="23">
-          <span class="hits">137</span>
+        <li class="covered" data-hits="139" data-linenumber="23">
+          <span class="hits">139</span>
           
           <code class="ruby">    contents.values.sum</code>
         </li>
@@ -4333,6 +4343,192 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="979924838eaad73c1e4ca5831bf737e8375a1d0d">
+  <div class="header">
+    <h3>test/integration/admin_edit_test.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># Background: an existing item</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">#       As an admin</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">#       When I visit &quot;admin/items&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">#       And I click &quot;Edit&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">#       Then my current path should be &quot;/admin/items/:ITEM_ID/edit&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">#       And I should be able to upate title, description, image, and status</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &quot;test_helper&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class AdminEditStickerTest &lt; ActionDispatch::IntegrationTest</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def setup</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @admin = User.create(username: &quot;emily&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">                          password: &quot;password&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">                          role: 1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit login_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &quot;Username&quot;, with: &quot;emily&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &quot;Password&quot;, with: &quot;password&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &quot;Login&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  test &quot;admin can view edit path&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">end</code>

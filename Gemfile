@@ -5,7 +5,6 @@ gem 'aws-sdk-v1'
 # gem 'aws-sdk'
 # gem 'aws-s3'
 gem 'figaro'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record

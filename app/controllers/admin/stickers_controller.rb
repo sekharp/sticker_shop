@@ -1,6 +1,5 @@
 class Admin::StickersController < Admin::BaseController
   def new
-    @categories = Category.all.map { |cat| [cat.title, cat.id] }
     @sticker = Sticker.new
   end
 
