@@ -1,14 +1,4 @@
-<h1>Admin Dashboard</h1>
 
-<h3>Snapshot</h3>
-
-  <ul>
-    <li><%= link_to "Ordered(#{@orders.ordered.count})", admin_dashboard_path("ordered") %></li>
-    <li><%= link_to "Paid(#{@orders.paid.count})", admin_dashboard_path("paid") %></li>
-    <li><%= link_to "Completed(#{@orders.completed.count})", admin_dashboard_path("completed") %></li>
-    <li><%= link_to "Cancelled(#{@orders.cancelled.count})", admin_dashboard_path("cancelled") %></li>
-  </ul>
-<h3>Orders</h3>
 
 <table id='past-orders' class="highlight">
   <thead>
