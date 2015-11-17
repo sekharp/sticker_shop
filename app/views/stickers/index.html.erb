@@ -17,7 +17,9 @@
           <p><%= sticker.description %></p>
         </div>
         <div class="card-action">
-          <div id='<%= sticker.title %>-button' class="waves-effect waves-light btn blue"><%= button_to "Add to Cart", cart_stickers_path(sticker_id: sticker.id) %></div>
+          <div id='<%= sticker.title %>-button' class="waves-effect waves-light btn blue">
+            <%= button_to "Add to Cart", cart_stickers_path(sticker_id: sticker.id) %>
+          </div>
         </div>
       </div>
     </div>

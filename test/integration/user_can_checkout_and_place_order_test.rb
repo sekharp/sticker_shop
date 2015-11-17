@@ -2,7 +2,7 @@ class UserCanCheckoutAndPlaceOrderTest < ActionDispatch::IntegrationTest
 
   test "visitor will be asked to login when trying to checkout" do
     Sticker.create(title: "Nodejs",
-                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6)
 
     visit root_path
@@ -25,7 +25,7 @@ class UserCanCheckoutAndPlaceOrderTest < ActionDispatch::IntegrationTest
                 password: "password")
 
     Sticker.create(title: "Nodejs",
-                   image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6)
 
     visit login_path
