@@ -7,7 +7,7 @@
   <p><b>Total Price: </b>$<%= @order.order_stickers.map { |os| os.sticker.price * os.quantity }.sum %></p>
   <p><b>Order Created At: </b><%= @order.created_at.strftime("%B %d, %Y at %H:%M:%S") %></p>
   <p><b>Status of Order Completion or Cancellation: </b>
-    <% if @order.status.include?("Completed") || @order.status.include?("Cancelled") %>
+    <% if @order.finished? %>
     <%= "Order Finished" %>
     <% else %>
     <%= "Order Not Finished" %></p>
