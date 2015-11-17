@@ -25,7 +25,7 @@ class Cart
 
   def total_price
     subtotals = stickers.map do |cart_sticker|
-      cart_sticker.quantity * cart_sticker.sticker.price
+      cart_sticker.quantity * cart_sticker.price
     end
     subtotals.sum
   end

@@ -1,7 +1,7 @@
 <h1><%= @category.title.capitalize %> Stickers</h1>
 
 <div id='stickers' class="row">
-  <% @stickers.each do |sticker| %>
+  <% @category.stickers.each do |sticker| %>
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
