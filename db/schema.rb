@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116224156) do
+ActiveRecord::Schema.define(version: 20151117203807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,17 +45,17 @@ ActiveRecord::Schema.define(version: 20151116224156) do
 
   create_table "stickers", force: :cascade do |t|
     t.string   "title"
-    t.string   "image_url"
-    t.integer  "price"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.string   "image_url",          default: "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"
+    t.decimal  "price"
+    t.datetime "created_at",                                                                                                 null: false
+    t.datetime "updated_at",                                                                                                 null: false
     t.integer  "category_id"
     t.text     "description"
-    t.string   "image_file_name"
+    t.boolean  "retired",            default: false
+    t.string   "image_file_name",    default: "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "retired",     default: false
   end
 
   add_index "stickers", ["category_id"], name: "index_stickers_on_category_id", using: :btree
