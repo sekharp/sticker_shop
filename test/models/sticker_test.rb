@@ -1,6 +1,9 @@
 require "test_helper"
 
 class StickerTest < ActiveSupport::TestCase
+  should have_many(:order_stickers)
+  should belong_to(:category)
+
   test "is valid with correct params" do
     sticker = Sticker.new(title: "Node.js",
                           image_url: "http://devstickers.com/assets/img/cat/nodejs.png",

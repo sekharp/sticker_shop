@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class OrderStickerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should belong_to(:sticker)
+  should belong_to(:order)
 end
