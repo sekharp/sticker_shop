@@ -5,6 +5,5 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(slug: params[:slug])
-    @stickers = @category.stickers.all
   end
 end
