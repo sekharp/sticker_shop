@@ -6,6 +6,9 @@ class OrdersController < ApplicationController
   def create
     if session[:user_id].nil?
       redirect_to '/login'
+    elsif session[:cart].nil? || session[:cart].empty?
+      redirect_to '/cart'
+      flash[:notice] = "No stickers in cart. Don't you want stickers?"
     else
       order = Order.create(status: "Ordered", user_id: current_user.id)
       session[:cart].map { |id, q| OrderSticker.create(quantity: q, sticker_id: id, order_id: order.id) }
