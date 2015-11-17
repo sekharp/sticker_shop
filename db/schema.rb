@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117153302) do
+ActiveRecord::Schema.define(version: 20151117192957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20151117153302) do
   create_table "stickers", force: :cascade do |t|
     t.string   "title"
     t.string   "image_url",   default: "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"
-    t.integer  "price"
+    t.decimal  "price"
     t.datetime "created_at",                                                                                          null: false
     t.datetime "updated_at",                                                                                          null: false
     t.integer  "category_id"

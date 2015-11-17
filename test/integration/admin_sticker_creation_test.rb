@@ -42,4 +42,35 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "admin cannot create sticker with price of 0" do
+    click_link "Add New Sticker"
+
+    assert new_admin_sticker_path, current_path
+
+    fill_in "Title", with: "New Sticker"
+    fill_in "Category", with: "Ruby"
+    fill_in "Description", with: "New sticker description"
+    fill_in "Price", with: 0
+    click_button "Create Sticker"
+
+    within("#nav-bar") do
+      assert page.has_content?("The price $0.0 is too low. Please enter a new price.")
+    end
+  end
+
+  test "admin can create sticker if price includes a decimal" do
+    click_link "Add New Sticker"
+
+    assert new_admin_sticker_path, current_path
+
+    fill_in "Title", with: "New Sticker"
+    fill_in "Category", with: "Ruby"
+    fill_in "Description", with: "New sticker description"
+    fill_in "Price", with: 5.5
+    click_button "Create Sticker"
+
+    within("#nav-bar") do
+      assert page.has_content?("NEW STICKER sticker created")
+    end
+  end
 end

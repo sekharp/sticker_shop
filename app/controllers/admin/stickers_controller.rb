@@ -11,7 +11,7 @@ class Admin::StickersController < Admin::BaseController
       flash[:error] = "A sticker with the title of '#{@sticker.title}' already exists. Please enter a new title."
       render :new
     elsif @sticker.price < 0.01
-      flash[:error] = "The price '$ #{@sticker.price}' is too low. Please enter a new price."
+      flash[:error] = "The price $#{@sticker.price} is too low. Please enter a new price."
       render :new
     elsif @sticker.save
       flash[:success] = "#{@sticker.title.upcase} sticker created"
