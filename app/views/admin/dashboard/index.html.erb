@@ -1,1 +1,51 @@
 <h1>Admin Dashboard</h1>
+
+<h3>Snapshot</h3>
+
+<table id='past-orders' class="highlight centered">
+  <thead>
+    <tr>
+      <th data-field="ordered"><%= link_to "Ordered(#{@orders.ordered.count})", admin_dashboard_path("ordered") %></th>
+      <th data-field="paid"><%= link_to "Paid(#{@orders.paid.count})", admin_dashboard_path("paid") %></th>
+      <th data-field="completed"><%= link_to "Completed(#{@orders.completed.count})", admin_dashboard_path("completed") %></th>
+      <th data-field="cancelled"><%= link_to "Cancelled(#{@orders.cancelled.count})", admin_dashboard_path("cancelled") %></th>
+    </tr>
+  </thead>
+</table>
+
+<h3>Orders</h3>
+
+<table id='past-orders' class="highlight">
+  <thead>
+    <tr>
+      <th data-field="id">Order Number</th>
+      <th data-field="name">Date Ordered</th>
+      <th data-field="current_status">Current Status</th>
+      <th data-field="adjust_status">Adjust Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.id, order %></td>
+        <td><%= order.created_at.strftime("%B %d, %Y") %></td>
+        <td><%= order.status %></td>
+
+        <td>
+          <% if order.status == "ordered" %>
+            <%= link_to "Mark As Paid", admin_order_path(:id => order.id, :status => "paid"), method: :put  %><br>
+            <%= link_to "Cancel", admin_order_path(:id => order.id, :status => "cancelled"), method: :put  %>
+          <% elsif order.status == "paid" %>
+            <%= link_to "Mark as Completed", admin_order_path(:id => order.id, :status => "completed"), method: :put  %><br>
+            <%= link_to "Cancel", admin_order_path(:id => order.id, :status => "cancelled"), method: :put  %>
+          <% else %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>
+  <%= link_to "Add New Sticker", new_admin_sticker_path %>
+</p>
