@@ -1,5 +1,6 @@
 class Sticker < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, presence: true,
+                    uniqueness: true
   validates :price, presence: true
   validates :image, presence: true
 
