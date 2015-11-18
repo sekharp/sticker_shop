@@ -409,5 +409,10 @@
       ]
     },
     "timestamp": 1447872348
+  },
+  "Integration Tests": {
+    "coverage": {
+    },
+    "timestamp": 1447877110
   }
 }

@@ -2,6 +2,13 @@
   <h1>Order Details</h1>
 
   <p><b>Order number: </b><%= @order.id %></p>
+  <p><b>Purchaser: </b><%= @order.user.first_name %> <%= @order.user.last_name %></p>
+  <p><b>Purchasers Address: </b>
+    <%= @order.user.street_address %>
+    <%= @order.user.city %>
+    <%= @order.user.state %> 
+    <%= @order.user.zip %>
+  </p>
   <p><b>Date ordered: </b><%= @order.created_at.strftime("%B %d, %Y") %></p>
   <p><b>Status: </b><%= @order.status.capitalize %></p>
   <p><b>Total Price: </b>$<%= @order.order_stickers.map { |os| os.sticker.price * os.quantity }.sum %></p>
