@@ -44,6 +44,7 @@ group :development, :test do
   gem 'mrspec'
   gem 'mocha'
   gem 'capybara'
+  gem 'shoulda'
 end
 
 group :development do
