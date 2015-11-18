@@ -43,12 +43,4 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Cancelled(1)")
   end
 
-  test "admin can filter orders by each status type" do
-    skip
-    user_setup
-    order_setup
-    admin_login
-
-
-  end
 end
