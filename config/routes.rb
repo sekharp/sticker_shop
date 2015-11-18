@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   post '/checkout', to: "orders#create"
 
   namespace :admin do
-    resources :dashboard, only: [:index]
+    resources :dashboard, only: [:index, :show], param: :status
+    resources :orders, only: [:update]
+    resources :stickers, only: [:new, :create]
   end
 
   get '*unmatched_route', to: 'application#not_found'

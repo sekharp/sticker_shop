@@ -15,6 +15,14 @@ class CartTest < ActiveSupport::TestCase
     assert_equal({ "1" => 2 }, cart.contents)
   end
 
+  test "can subtract sticker" do
+    cart = Cart.new( { "1" => 2 } )
+
+    cart.subtract_sticker(1)
+
+    assert_equal( { "1" => 1 } , cart.contents)
+  end
+
   test "returns sum of all added stickers" do
     cart = Cart.new({ "1" => 1, "2" => 7, "3" => 4})
 

@@ -1,0 +1,17 @@
+<h1>New Sticker</h1>
+
+<%= form_for(@sticker, url: admin_stickers_path) do |f| %>
+  <%= f.text_field :title, required: true %>
+  <%= f.label :title %>
+  <%= f.text_field :category, required: true %>
+  <%= f.label :category %>
+  <%= f.text_field :description, required: true %>
+  <%= f.label :description %>
+  <%= f.text_field :price, required: true %>
+  <%= f.label :price %>
+  <%= f.text_field :image_url %>
+  <%= f.label :image_url %></br>
+  <div class="right bottom-margin-20">
+    <%= f.submit "Create Sticker"%>
+  </div>
+<% end %>

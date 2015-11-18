@@ -22,41 +22,41 @@ class Seed
 
   def create_stickers
     @nodejs_sticker = @javascript_category.stickers.create(title: "Nodejs",
-                                         image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                                         image: "http://devstickers.com/assets/img/cat/nodejs.png",
                                          price: 6,
                                          description: "Node.js logo")
     @reactjs_sticker = @javascript_category.stickers.create(title: "Reactjs",
-                                         image_url: "http://devstickers.com/assets/img/cat/react-js.png",
+                                         image: "http://devstickers.com/assets/img/cat/react-js.png",
                                          price: 8,
                                          description: "React.js logo")
     @ruby_sticker = @ruby_category.stickers.create(title: "Ruby",
-                                   image_url: "http://devstickers.com/assets/img/cat/ruby.png",
+                                   image: "http://devstickers.com/assets/img/cat/ruby.png",
                                    price: 82,
                                    description: "Ruby logo")
     @browser_category.stickers.create(title: "Chrome",
-                                      image_url: "http://devstickers.com/assets/img/cat/chrome.png",
+                                      image: "http://devstickers.com/assets/img/cat/chrome.png",
                                       price: 2,
                                       description: "Chrome logo")
     @javascript_category.stickers.create(title: "Angularjs",
-                                         image_url: "http://devstickers.com/assets/img/cat/angularjs.png",
+                                         image: "http://devstickers.com/assets/img/cat/angularjs.png",
                                          price: 3,
                                          description: "Angular.js logo")
     @javascript_category.stickers.create(title: "Javascript",
-                                         image_url: "http://devstickers.com/assets/img/cat/javascript.png",
+                                         image: "http://devstickers.com/assets/img/cat/javascript.png",
                                          price: 5,
                                          description: "Javascript logo")
     @git_category.stickers.create(title: "Git",
-                                   image_url: "http://devstickers.com/assets/img/cat/git.png",
-                                   price: 55,
-                                   description: "Git logo")
+                                  image: "http://devstickers.com/assets/img/cat/git.png",
+                                  price: 55,
+                                  description: "Git logo")
     @editor_category.stickers.create(title: "Vim",
-                                      image_url: "http://devstickers.com/assets/img/pro/tnue.png",
-                                      price: 7,
-                                      description: "Vim logo")
+                                     image: "http://devstickers.com/assets/img/pro/tnue.png",
+                                     price: 7,
+                                     description: "Vim logo")
     @editor_category.stickers.create(title: "Atom",
-                                      image_url: "http://devstickers.com/assets/img/pro/iwyr.png",
-                                      price: 6,
-                                      description: "Atom logo")
+                                     image: "http://devstickers.com/assets/img/pro/iwyr.png",
+                                     price: 6,
+                                     description: "Atom logo")
 
     puts "#{Sticker.all.map(&:title).join(", ")} stickers created."
   end
@@ -71,10 +71,10 @@ class Seed
   end
 
   def create_orders
-    @order_1 = Order.create(status: "Ordered", user_id: @sekhar.id)
-    @order_2 = Order.create(status: "Paid", user_id: @sekhar.id)
-    @order_3 = Order.create(status: "Cancelled", user_id: @emily.id)
-    @order_4 = Order.create(status: "Completed", user_id: @jason.id)
+    @order_1 = Order.create(status: "ordered", user_id: @sekhar.id)
+    @order_2 = Order.create(status: "paid", user_id: @sekhar.id)
+    @order_3 = Order.create(status: "cancelled", user_id: @emily.id)
+    @order_4 = Order.create(status: "completed", user_id: @jason.id)
     puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
   end
 
@@ -83,7 +83,6 @@ class Seed
     OrderSticker.create(quantity: 2, order_id: @order_1.id, sticker_id: @reactjs_sticker.id)
     OrderSticker.create(quantity: 5, order_id: @order_2.id, sticker_id: @ruby_sticker.id)
   end
-
 end
 
 Seed.start
