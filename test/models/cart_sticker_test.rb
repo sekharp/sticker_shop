@@ -3,7 +3,7 @@ require 'test_helper'
 class CartStickerTest < ActiveSupport::TestCase
   test "can initialize with sticker and quantity" do
     sticker = Sticker.new(title: "Node.js",
-                          image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                          image: "http://devstickers.com/assets/img/cat/nodejs.png",
                           price: 6)
     c_sticker = CartSticker.new(sticker, 4)
 
@@ -13,7 +13,7 @@ class CartStickerTest < ActiveSupport::TestCase
 
   test "can return subtotal" do
     sticker = Sticker.new(title: "Node.js",
-                          image_url: "http://devstickers.com/assets/img/cat/nodejs.png",
+                          image: "http://devstickers.com/assets/img/cat/nodejs.png",
                           price: 6)
     c_sticker = CartSticker.new(sticker, 4)
 

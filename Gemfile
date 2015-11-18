@@ -45,6 +45,7 @@ group :development, :test do
   gem 'mocha'
   gem 'capybara'
   gem 'shoulda'
+  gem 'simplecov'
 end
 
 group :development do

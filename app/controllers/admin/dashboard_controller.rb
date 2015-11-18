@@ -5,9 +5,8 @@ class Admin::DashboardController < Admin::BaseController
 
   def show
     @orders = Order.where(status: params[:status].downcase)
-    unless @orders
+    if @orders.empty?
       redirect_to admin_dashboard_index_path
     end
   end
-
 end

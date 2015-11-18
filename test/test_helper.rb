@@ -5,6 +5,8 @@ require 'minitest/pride'
 require 'mocha/mini_test'
 require 'capybara/rails'
 
+SimpleCov.start("rails")
+
 class ActiveSupport::TestCase
 end
 
