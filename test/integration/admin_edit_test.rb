@@ -1,10 +1,3 @@
-# Background: an existing item
-#       As an admin
-#       When I visit "admin/items"
-#       And I click "Edit"
-#       Then my current path should be "/admin/items/:ITEM_ID/edit"
-#       And I should be able to upate title, description, image, and status
-
 require "test_helper"
 
 class AdminEditStickerTest < ActionDispatch::IntegrationTest
@@ -21,7 +14,7 @@ class AdminEditStickerTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can view edit path" do
-    
+
 
   end
 
