@@ -52,7 +52,11 @@ ActiveRecord::Schema.define(version: 20151117203807) do
     t.integer  "category_id"
     t.text     "description"
     t.boolean  "retired",            default: false
+<<<<<<< HEAD
     t.string   "image_file_name",    default: "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"
+=======
+    t.string   "image_file_name"
+>>>>>>> 62-admin-orders
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"

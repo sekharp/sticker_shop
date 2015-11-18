@@ -1,6 +1,7 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/sticker.rb": [
         1,
         1,
@@ -65,10 +66,47 @@
         1,
         1,
         1,
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/models/user.rb": [
+        1,
+        1,
+        1,
         1,
         null,
         null,
         1,
+        null,
+        1,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/sticker.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/session_controller.rb": [
+        1,
+        null,
+>>>>>>> 62-admin-orders
+        1,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
         null,
         1,
         null
@@ -90,6 +128,29 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/application_controller.rb": [
+=======
+        12,
+        12,
+        4,
+        4,
+        8,
+        8,
+        8,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/application_controller.rb": [
+>>>>>>> 62-admin-orders
         1,
         null,
         null,
@@ -98,6 +159,7 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         173,
         null,
         null,
@@ -107,22 +169,45 @@
         null,
         1,
         20,
+=======
+        153,
+        null,
+        null,
+        1,
+        146,
+        null,
+        null,
+        1,
+        10,
+>>>>>>> 62-admin-orders
         null,
         null,
         1,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/helpers/application_helper.rb": [
         1,
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/cart.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/cart.rb": [
+>>>>>>> 62-admin-orders
         1,
         1,
         null,
         1,
+<<<<<<< HEAD
         178,
+=======
+        158,
+>>>>>>> 62-admin-orders
         null,
         null,
         1,
@@ -140,7 +225,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         141,
+=======
+        127,
+>>>>>>> 62-admin-orders
         null,
         null,
         1,
@@ -162,6 +251,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/session_controller.rb": [
         1,
         null,
@@ -180,12 +270,39 @@
         0,
         0,
         null,
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/stickers_controller.rb": [
+        1,
+        1,
+        46,
+        0,
+        0,
+        null,
+        46,
+        null,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/cart_stickers_controller.rb": [
+        1,
+        1,
+        19,
+        19,
+        19,
+        19,
+        19,
+>>>>>>> 62-admin-orders
         null,
         null,
         1,
         1,
         1,
         1,
+<<<<<<< HEAD
         null,
         null
       ],
@@ -215,6 +332,53 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/orders_controller.rb": [
+=======
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/cart_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/cart_sticker.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        34,
+        34,
+        34,
+        null,
+        null,
+        1,
+        17,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/orders_controller.rb": [
+>>>>>>> 62-admin-orders
         1,
         1,
         null,
@@ -248,6 +412,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/admin/dashboard_controller.rb": [
         1,
         1,
@@ -326,11 +491,72 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/cart_controller.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/models/order.rb": [
+        1,
+        1,
+        1,
+        null,
+        6,
+        6,
+        6,
+        6,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        8,
+        2,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/order_sticker.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/admin/dashboard_controller.rb": [
+        1,
+        1,
+        5,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/admin/base_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        10,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/category.rb": [
+>>>>>>> 62-admin-orders
         1,
         1,
         null,
         null,
         1,
+<<<<<<< HEAD
         1,
         1,
         1,
@@ -349,6 +575,21 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/categories_controller.rb": [
+=======
+        null,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/categories_controller.rb": [
+>>>>>>> 62-admin-orders
         1,
         1,
         3,
@@ -359,7 +600,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/users_controller.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/users_controller.rb": [
+>>>>>>> 62-admin-orders
         1,
         null,
         1,
@@ -406,6 +651,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1447869024
+=======
+    "timestamp": 1447807341
+>>>>>>> 62-admin-orders
   }
 }
