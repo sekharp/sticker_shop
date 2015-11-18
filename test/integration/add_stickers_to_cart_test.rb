@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AddItemsToCartTest < ActionDispatch::IntegrationTest
   test "displays added item to cart message and cart item quantity" do
-    Sticker.create(title: "Node_js",
+    Sticker.create(title: "Nodejs",
                    image: "http://devstickers.com/assets/img/cat/nodejs.png",
                    price: 6,
                    description: "Node.js logo")
@@ -15,7 +15,7 @@ class AddItemsToCartTest < ActionDispatch::IntegrationTest
     click_button "Add to Cart"
 
     within("#nav-bar") do
-      assert page.has_content?("Sticker added to cart")
+      assert page.has_content?("Successfully added Nodejs sticker to your cart.")
     end
 
     within("#primary-navigation") do
