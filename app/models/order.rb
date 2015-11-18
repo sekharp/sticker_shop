@@ -7,20 +7,9 @@ class Order < ActiveRecord::Base
   scope :cancelled, -> { where(status: "cancelled") }
   scope :ordered, -> { where(status: "ordered") }
 
-  ORDER_STATUS = {
-    "paid" => ["cancel", "mark as completed"],
-    "ordered" => ["cancel", "mark as paid"],
-    "cancelled" => [],
-    "completed" => []
-  }
-
   def finished?
-    if status.include?("Completed") || status.include?("Cancelled")
+    if status.include?("completed") || status.include?("cancelled")
       true
     end
-  end
-
-  def change_status_options
-    ORDER_STATUS[status]
   end
 end
