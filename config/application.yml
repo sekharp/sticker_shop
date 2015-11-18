@@ -11,5 +11,5 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 S3_BUCKET_NAME: 'stickershopbucketstickers'
-AWS_ACCESS_KEY_ID: ''
-AWS_SECRET_ACCESS_KEY: ''
+AWS_ACCESS_KEY_ID: 'AKIAJII2IIYEZL6AV4XA'
+AWS_SECRET_ACCESS_KEY: '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'

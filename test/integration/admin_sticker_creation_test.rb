@@ -3,8 +3,8 @@ require "test_helper"
 class AdminStickerCreationTest < ActionDispatch::IntegrationTest
   def setup
     @admin = User.create(username: "emily",
-                          password: "password",
-                          role: 1)
+                         password: "password",
+                         role: 1)
 
     visit login_path
 
