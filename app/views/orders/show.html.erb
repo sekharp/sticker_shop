@@ -4,9 +4,9 @@
   <p><b>Order number: </b><%= @order.id %></p>
   <p><b>Purchaser: </b><%= @order.user.first_name %> <%= @order.user.last_name %></p>
   <p><b>Purchasers Address: </b>
-    <%= @order.user.street_address %>
-    <%= @order.user.city %>
-    <%= @order.user.state %> 
+    <%= @order.user.street_address %>,
+    <%= @order.user.city %>,
+    <%= @order.user.state %>,
     <%= @order.user.zip %>
   </p>
   <p><b>Date ordered: </b><%= @order.created_at.strftime("%B %d, %Y") %></p>

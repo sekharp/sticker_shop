@@ -62,26 +62,83 @@ class Seed
   end
 
   def create_users
-    @sekhar = User.create(first_name: "Sekhar", last_name: "Paladugu", username: "sekhar", password: "sekhar", role: 1)
-    @emily = User.create(first_name: "Emily", last_name: "Dowdle", username: "emily", password: "emily", role: 1)
-    @jason = User.create(first_name: "Jason", last_name: "Pilz", username: "jason", password: "jason", role: 1)
-    User.create(first_name: "Britney", last_name: "Spears", username: "britneyspears", password: "oopsididitagain")
-    User.create(first_name: "Snoop", last_name: "Dogg", username: "snoopdogg", password: "momma")
+    @sekhar = User.create(first_name: "Sekhar",
+                          last_name: "Paladugu",
+                          username: "sekhar",
+                          password: "sekhar",
+                          role: 1,
+                          street_address: Faker::Address.street_address,
+                          city: Faker::Address.city,
+                          state: Faker::Address.state_abbr,
+                          zip: Faker::Address.zip )
+    @emily = User.create(first_name: "Emily",
+                         last_name: "Dowdle",
+                         username: "emily",
+                         password: "emily",
+                         role: 1,
+                         street_address: Faker::Address.street_address,
+                         city: Faker::Address.city,
+                         state: Faker::Address.state_abbr,
+                         zip: Faker::Address.zip )
+    @jason = User.create(first_name: "Jason",
+                         last_name: "Pilz",
+                         username: "jason",
+                         password: "jason",
+                         role: 1,
+                         street_address: Faker::Address.street_address,
+                         city: Faker::Address.city,
+                         state: Faker::Address.state_abbr,
+                         zip: Faker::Address.zip )
+    User.create(first_name: "Britney",
+                last_name: "Spears",
+                username: "britneyspears",
+                password: "oopsididitagain",
+                street_address: Faker::Address.street_address,
+                city: Faker::Address.city,
+                state: Faker::Address.state_abbr,
+                zip: Faker::Address.zip )
+    User.create(first_name: "Snoop",
+                last_name: "Dogg",
+                username: "snoopdogg",
+                password: "momma",
+                street_address: Faker::Address.street_address,
+                city: Faker::Address.city,
+                state: Faker::Address.state_abbr,
+                zip: Faker::Address.zip )
     puts "#{User.all.map(&:username).join(", ")} users created."
   end
 
   def create_orders
-    @order_1 = Order.create(status: "ordered", user_id: @sekhar.id)
-    @order_2 = Order.create(status: "paid", user_id: @sekhar.id)
-    @order_3 = Order.create(status: "cancelled", user_id: @emily.id)
-    @order_4 = Order.create(status: "completed", user_id: @jason.id)
+    @order_1 = Order.create(status: "ordered",
+                            user_id: @sekhar.id)
+    @order_2 = Order.create(status: "paid",
+                            user_id: @sekhar.id)
+    @order_3 = Order.create(status: "cancelled",
+                            user_id: @emily.id)
+    @order_4 = Order.create(status: "completed",
+                            user_id: @jason.id)
     puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
   end
 
   def create_order_stickers
-    OrderSticker.create(quantity: 3, order_id: @order_1.id, sticker_id: @nodejs_sticker.id)
-    OrderSticker.create(quantity: 2, order_id: @order_1.id, sticker_id: @reactjs_sticker.id)
-    OrderSticker.create(quantity: 5, order_id: @order_2.id, sticker_id: @ruby_sticker.id)
+    OrderSticker.create(quantity: 3,
+                        order_id: @order_1.id,
+                        sticker_id: @nodejs_sticker.id)
+    OrderSticker.create(quantity: 2,
+                        order_id: @order_1.id,
+                        sticker_id: @reactjs_sticker.id)
+    OrderSticker.create(quantity: 5,
+                        order_id: @order_2.id,
+                        sticker_id: @ruby_sticker.id)
+    OrderSticker.create(quantity: 3,
+                        order_id: @order_3.id,
+                        sticker_id: @nodejs_sticker.id)
+    OrderSticker.create(quantity: 6,
+                        order_id: @order_3.id,
+                        sticker_id: @reactjs_sticker.id)
+    OrderSticker.create(quantity: 2,
+                        order_id: @order_4.id,
+                        sticker_id: @ruby_sticker.id)
   end
 end
 

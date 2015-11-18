@@ -7,7 +7,7 @@ class OrderTest < ActiveSupport::TestCase
   test "is finished if status includes completed or cancelled" do
     user = User.create( username: "jason",
                         password: "password")
-    order = user.orders.create( status: "Completed",
+    order = user.orders.create( status: "completed",
                                 user_id: user.id )
     assert order.finished?
 
