@@ -7,17 +7,20 @@ class Order < ActiveRecord::Base
   scope :cancelled, -> { where(status: "cancelled") }
   scope :ordered, -> { where(status: "ordered") }
 
+  ORDER_STATUS = {
+    "paid" => ["cancel", "mark as completed"],
+    "ordered" => ["cancel", "mark as paid"],
+    "cancelled" => [],
+    "completed" => []
+  }
+
   def finished?
     if status.include?("Completed") || status.include?("Cancelled")
       true
     end
   end
 
-  def message
-    if order_stickers.map { |os| os.sticker.retired? }.include?(true)
-      "Order includes item(s) no longer available."
-    else
-      nil
-    end
+  def change_status_options
+    ORDER_STATUS[status]
   end
 end
