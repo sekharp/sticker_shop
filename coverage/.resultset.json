@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/user.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/models/user.rb": [
+>>>>>>> master
         1,
         1,
         1,
@@ -13,6 +17,7 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/order.rb": [
         1,
         1,
@@ -39,18 +44,24 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/category.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/models/sticker.rb": [
         1,
         1,
         null,
+        1,
+        1,
         null,
+>>>>>>> master
+        1,
         1,
         null,
         1,
         null,
-        1,
-        7,
         null,
         null,
+        null,
+<<<<<<< HEAD
         1,
         6,
         null,
@@ -74,9 +85,14 @@
         null,
         1,
         null,
+=======
+        null,
+        1,
+        null,
+>>>>>>> master
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/stickers_controller.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/stickers_controller.rb": [
         1,
         1,
         50,
@@ -114,7 +130,7 @@
         null,
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/application_controller.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -138,11 +154,11 @@
         null,
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/helpers/application_helper.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/cart.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/models/cart.rb": [
         1,
         1,
         null,
@@ -187,7 +203,10 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/cart_stickers_controller.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/cart_stickers_controller.rb": [
         1,
         1,
         19,
@@ -198,11 +217,56 @@
         null,
         null,
         1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        2,
+        null,
+        null,
         1,
         1,
         1,
         1,
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/session_controller.rb": [
+>>>>>>> master
+        1,
+        1,
+        19,
+        19,
+        19,
+        19,
+        19,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
+        1,
+        1,
+        1,
+        1,
+        1,
+=======
+        16,
+        16,
+        16,
+        8,
+        8,
+        8,
+        8,
+        8,
+>>>>>>> master
         null,
         null
       ],
@@ -211,12 +275,19 @@
         1,
         null,
         null,
+<<<<<<< HEAD
         1,
         1,
         1,
         1,
         1,
         1,
+=======
+        0,
+        0,
+        null,
+        null,
+>>>>>>> master
         null,
         null,
         1,
@@ -229,11 +300,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/cart_sticker.rb": [
         1,
         1,
         null,
         null,
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/cart_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/cart_sticker.rb": [
+        1,
+>>>>>>> master
         1,
         34,
         34,
@@ -241,6 +323,7 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         17,
         null,
         null
@@ -249,30 +332,81 @@
         1,
         null,
         1,
+=======
+        34,
+        34,
+        34,
         null,
         null,
         1,
         17,
-        17,
-        9,
-        9,
-        8,
-        8,
-        8,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
+>>>>>>> master
         null,
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/orders_controller.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+<<<<<<< HEAD
+        17,
+        17,
+        9,
+        9,
+        8,
+        8,
+        8,
+=======
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+>>>>>>> master
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
+        1,
+        1,
+        1,
+=======
+        3,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+>>>>>>> master
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/orders_controller.rb": [
         1,
         1,
         null,
@@ -306,6 +440,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/order_sticker.rb": [
         1,
         1,
@@ -324,6 +459,9 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/admin/dashboard_controller.rb": [
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/admin/dashboard_controller.rb": [
+>>>>>>> master
         1,
         1,
         10,
@@ -335,10 +473,9 @@
         0,
         null,
         null,
-        null,
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/admin/base_controller.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/admin/base_controller.rb": [
         1,
         1,
         null,
@@ -347,9 +484,10 @@
         null,
         null
       ],
-      "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/admin/stickers_controller.rb": [
+      "/Users/jasonpilz/code/sticker_shop/app/models/order.rb": [
         1,
         1,
+<<<<<<< HEAD
         4,
         null,
         null,
@@ -388,10 +526,23 @@
         null,
         null,
         null,
+=======
+        1,
+        null,
+        10,
+        10,
+        10,
+        10,
+        null,
+        1,
+        8,
+        2,
+>>>>>>> master
         null,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/users_controller.rb": [
         1,
         null,
@@ -401,11 +552,15 @@
         null,
         1,
         1,
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/models/order_sticker.rb": [
+>>>>>>> master
         1,
         1,
         null,
         1,
         1,
+<<<<<<< HEAD
         null,
         0,
         0,
@@ -456,12 +611,18 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/session_controller.rb": [
+=======
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/models/category.rb": [
+>>>>>>> master
         1,
         null,
         1,
         null,
         null,
         1,
+<<<<<<< HEAD
         2,
         2,
         2,
@@ -489,12 +650,20 @@
         1,
         1,
         1,
+=======
+        null,
+        1,
+        null,
+        1,
+        7,
+>>>>>>> master
         null,
         1,
         21,
         null,
         null,
         1,
+<<<<<<< HEAD
         41,
         null,
         null,
@@ -556,6 +725,13 @@
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/admin/dashboard_controller.rb": [
+=======
+        6,
+        null,
+        null
+      ],
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/categories_controller.rb": [
+>>>>>>> master
         1,
         1,
         2,
@@ -570,6 +746,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/controllers/admin/base_controller.rb": [
         1,
         1,
@@ -581,8 +758,12 @@
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/order.rb": [
         1,
+=======
+      "/Users/jasonpilz/code/sticker_shop/app/controllers/admin/stickers_controller.rb": [
+>>>>>>> master
         1,
         1,
+        3,
         null,
         3,
         3,
@@ -590,6 +771,7 @@
         3,
         null,
         1,
+<<<<<<< HEAD
         0,
         0,
         null,
@@ -627,26 +809,39 @@
         2,
         2,
         null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
+=======
         3,
+        3,
+        3,
+>>>>>>> master
+        0,
+        0,
+        3,
+<<<<<<< HEAD
         null,
         null,
         null,
         null,
+=======
+>>>>>>> master
         1,
         null,
         1,
+<<<<<<< HEAD
         4,
         null,
         null,
         null,
+=======
+        2,
+        2,
+        2,
+>>>>>>> master
         null,
+        0,
+        0,
         null,
+<<<<<<< HEAD
         null
       ],
       "/Users/emilydowdle1/Dropbox/turing_work/sticker_shop/app/models/sticker.rb": [
@@ -658,6 +853,8 @@
         null,
         1,
         1,
+=======
+>>>>>>> master
         null,
         1,
         null,
@@ -699,6 +896,7 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         0,
         null,
         null,
@@ -719,6 +917,9 @@
         1,
         2,
         null,
+=======
+        6,
+>>>>>>> master
         null,
         null,
         null,
@@ -726,6 +927,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1447884095
+=======
+    "timestamp": 1447886103
+>>>>>>> master
   }
 }

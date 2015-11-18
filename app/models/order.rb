@@ -8,16 +8,8 @@ class Order < ActiveRecord::Base
   scope :ordered, -> { where(status: "ordered") }
 
   def finished?
-    if status.include?("Completed") || status.include?("Cancelled")
+    if status.include?("completed") || status.include?("cancelled")
       true
-    end
-  end
-
-  def message
-    if order_stickers.map { |os| os.sticker.retired? }.include?(true)
-      "Order includes item(s) no longer available."
-    else
-      nil
     end
   end
 end

@@ -15,5 +15,5 @@
 # Ignore application configuration
 /config/application.yml
 
-# Ignore stickers
+# Ignore local sticker files
 /public/system/stickers

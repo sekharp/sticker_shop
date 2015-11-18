@@ -2,6 +2,13 @@
   <h1>Order Details</h1>
 
   <p><b>Order number: </b><%= @order.id %></p>
+  <p><b>Purchaser: </b><%= @order.user.first_name %> <%= @order.user.last_name %></p>
+  <p><b>Purchasers Address: </b>
+    <%= @order.user.street_address %>,
+    <%= @order.user.city %>,
+    <%= @order.user.state %>,
+    <%= @order.user.zip %>
+  </p>
   <p><b>Date ordered: </b><%= @order.created_at.strftime("%B %d, %Y") %></p>
   <p><b>Status: </b><%= @order.status.capitalize %></p>
   <p><b>Total Price: </b>$<%= @order.order_stickers.map { |os| os.sticker.price * os.quantity }.sum %></p>
@@ -13,7 +20,7 @@
     <%= "Order Not Finished" %></p>
     <% end %>
   <p><b>Timestamp of Completion or Cancellation: </b>
-    <% if @order.status.include?("Completed") || @order.status.include?("Cancelled") %>
+    <% if @order.finished? %>
     <%= @order.updated_at.strftime("%B %d, %Y at %H:%M:%S") %>
     <% else %>
     <%= "N/A" %></p>
@@ -24,7 +31,7 @@
 <div class="col s12 m4">
   <div class="divider"></div>
   <h5><b>Sticker: </b><a href="<%= sticker_path(os.sticker.id) %>"><%= os.sticker.title %></a></h5>
-  <img class="thumbnail" src="<%= os.sticker.image_url %>" alt='<%= os.sticker.title %>'/>
+  <img class="thumbnail" src="<%= os.sticker.image.url %>" alt='<%= os.sticker.title %>'/>
   <p><b>Sticker Price: </b>$<%= os.sticker.price %></p>
   <p><b>Quantity: </b><%= os.quantity %></p>
   <p><b>Sticker Subtotal: </b>$<%= os.sticker.price * os.quantity %></p>

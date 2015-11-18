@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: "stickers#index"
   resources :stickers, only: [:index, :show, :update]
   resources :categories, only: [:index, :show], param: :slug
-  resources :cart_stickers, only: [:create, :index, :destroy]
-  resources :cart, only: [:index, :create, :destroy]
+  resources :cart_stickers, only: [:create, :update, :index, :destroy]
+  resources :cart, only: [:index]
   resources :users, only: [:new, :create, :update]
   resources :orders, only: [:create, :index, :show]
   get '/login', to: "session#new"
