@@ -1,0 +1,41 @@
+<h1>Edit Sticker</h1>
+<div id="edit-sticker">
+  <%= form_for(@sticker) do |f| %>
+    <div class="input-field">
+      <%= f.label :title %>
+      <%= f.text_field :title, required: true %>
+    </div>
+    <div class="input-field">
+      <%= f.label :category %>
+      <%= f.text_field :category, required: true %>
+    </div>
+    <div class="input-field">
+      <%= f.label :description %>
+      <%= f.text_field :description, required: true %>
+    </div>
+    <div class="input-field">
+      <%= f.label :price %>
+      <%= f.text_field :price, required: true %>
+    </div>
+    <div class="input-field">
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div>
+    <p>
+      <% if @sticker.retired? %>
+        <%= @sticker.title %> is currently not available.
+      <% else %>
+        <%= @sticker.title %> is currently available.
+      <% end %>
+    </p>
+    <div class="input-field">
+      <%= f.radio_button(:retired, false) %>
+      <%= f.label(:retired_false, "Available") %>
+      <%= f.radio_button(:retired, true) %>
+      <%= f.label(:retired_true, "Not available") %>
+    </div>
+    <div class="right bottom-margin-20">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

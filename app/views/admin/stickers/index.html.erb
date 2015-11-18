@@ -1,0 +1,21 @@
+<h1>All Stickers</h1>
+
+<div class="row" id="stickers">
+  <% @stickers.each do |sticker| %>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <a href="<%= sticker_path(sticker.id) %>"><img class="max-width" src="<%= sticker.image.url(:original) %>"></a>
+        </div>
+        <div class="card-content">
+          <p><%= sticker.description %></p>
+        </div>
+        <div class="card-action">
+          <div id='<%= sticker.title %>-button' class="waves-effect waves-light btn blue">
+            <%= button_to "Edit", edit_admin_sticker_path(sticker.id), method: :get %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

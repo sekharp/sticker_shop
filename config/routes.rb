@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "stickers#index"
-  resources :stickers, only: [:index, :show]
+  resources :stickers, only: [:index, :show, :update]
   resources :categories, only: [:index, :show], param: :slug
   resources :cart_stickers, only: [:create, :index, :destroy]
   resources :cart, only: [:index, :create, :destroy]
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :dashboard, only: [:index, :show], param: :status
     resources :orders, only: [:update]
-    resources :stickers, only: [:new, :create]
+    resources :stickers, only: [:new, :create, :index, :edit, :update]
   end
 
   get '*unmatched_route', to: 'application#not_found'

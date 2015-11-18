@@ -14,38 +14,56 @@ class AdminEditStickerTest < ActionDispatch::IntegrationTest
 
     click_link "Add New Sticker"
 
-    assert new_admin_sticker_path, current_path
-
-    sticker = Sticker.create(title: "New Sticker",
-                             category: "Ruby",
-                             description: "New sticker description",
-                             price: 5)
+    fill_in "Title", with: "New Sticker"
+    fill_in "Category", with: "Ruby"
+    fill_in "Description", with: "New sticker description"
+    fill_in "Price", with: 5
+    click_button "Create Sticker"
   end
 
   test "admin can view edit path" do
     visit admin_stickers_path
 
+    sticker = Sticker.last
+
     click_button "Edit"
 
     assert edit_admin_sticker_path(sticker.id), current_path
 
-    within("edit-sticker") do
+    within("#edit-sticker") do
       assert page.has_content?("Title")
-      assert page.has_content?("New Sticker")
-      assert page.has_content?("Title")
+      assert "New Sticker", find_field("Title").value
+      assert page.has_content?("Category")
+      assert "Ruby", find_field("Category").value
+      assert page.has_content?("Price")
+      assert "5", find_field("Price").value
     end
 
+    fill_in "Description", with: "Edited Sticker"
+    click_button "Update Sticker"
 
-    #       And I click "Edit"
-    #       Then my current path should be "/admin/items/:ITEM_ID/edit"
-    #       And I should be able to upate title, description, image, and status
-
-    within("#nav-bar") do
-      assert page.has_content?("NEW STICKER sticker created")
-    end
-    within(".container") do
-      assert page.has_content?("New sticker description")
+    assert admin_stickers_path, current_path
+    within("#stickers") do
+      assert page.has_content?("Edited Sticker")
     end
   end
 
+  test "admin can edit sticker status" do
+    visit admin_stickers_path
+    sticker = Sticker.last
+    click_button "Edit"
+
+    choose("sticker_retired_true")
+    click_button "Update Sticker"
+
+    assert admin_stickers_path, current_path
+
+    within("#stickers") do
+      click_button "Edit"
+    end
+
+    within("#edit-sticker") do
+      assert page.has_content?("currently not available")
+    end
+  end
 end

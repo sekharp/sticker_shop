@@ -1,4 +1,8 @@
 class Admin::StickersController < Admin::BaseController
+  def index
+    @stickers = Sticker.all
+  end
+
   def new
     @sticker = Sticker.new
   end
@@ -21,12 +25,19 @@ class Admin::StickersController < Admin::BaseController
     end
   end
 
+  def edit
+    @sticker = Sticker.find(params[:id])
+  end
+
+
+
   private
 
   def sticker_params
     params.require(:sticker).permit(:title,
                                     :description,
                                     :price,
-                                    :image_url)
+                                    :image,
+                                    :retired)
   end
 end
