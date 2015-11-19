@@ -17,7 +17,7 @@ class Admin::StickersController < Admin::BaseController
       flash[:error] = "The price $#{@sticker.price} is too low. Please enter a new price."
       render :new
     elsif @sticker.save
-      flash[:success] = "#{@sticker.title.upcase} sticker created"
+      flash[:success] = "Successfully added #{view_context.link_to "#{@sticker.title}", sticker_path(@sticker.id)} sticker to the store.".html_safe
       redirect_to stickers_path
     else
       flash.now[:error] = "Something went wrong. Please try again."
