@@ -95,6 +95,15 @@ GEM
     minitest (5.8.2)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
+    monetize (1.1.0)
+      money (~> 6.5.0)
+    money (6.5.1)
+      i18n (>= 0.6.4, <= 0.7.0)
+    money-rails (1.4.1)
+      activesupport (>= 3.0)
+      monetize (~> 1.1.0)
+      money (~> 6.5.0)
+      railties (>= 3.0)
     mrspec (0.2.2)
       minitest (~> 5.0)
       rspec-core (~> 3.0)
@@ -205,6 +214,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mocha
+  money-rails
   mrspec
   paperclip
   pg
