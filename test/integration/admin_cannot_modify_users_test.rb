@@ -1,13 +1,15 @@
 class AdminCannotModifyOtherUsersDataTest < ActionDispatch::IntegrationTest
-  test "admin can modify their account data" do
-    admin = User.create(username: "Jason",
-                        password: "password",
-                        role: 1)
+  def setup
+    @admin = User.create(username: "Jason",
+                         password: "password",
+                         role: 1)
     visit login_path
     fill_in "Username", with: "Jason"
     fill_in "Password", with: "password"
     click_button "Login"
+  end
 
+  test "admin can modify their account data" do
     visit dashboard_path
     click_button "Edit Profile"
     fill_in "user_username", with: "Updatedjason"
@@ -24,15 +26,7 @@ class AdminCannotModifyOtherUsersDataTest < ActionDispatch::IntegrationTest
   end
 
   test "admin cannot modify other users account data" do
-    admin = User.create(username: "Jason",
-                        password: "password",
-                        role: 1)
-    visit login_path
-    fill_in "Username", with: "Jason"
-    fill_in "Password", with: "password"
-    click_button "Login"
-
-    admin_id = admin.id
+    admin_id = @admin.id
 
     visit '/users'
     assert page.has_content?("Oops!")

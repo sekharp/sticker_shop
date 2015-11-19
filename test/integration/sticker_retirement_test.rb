@@ -1,13 +1,15 @@
 class StickerRetirementTest < ActionDispatch::IntegrationTest
+  def setup
+    @sticker = Sticker.create(title: "Nodejs",
+                              image: "http://devstickers.com/assets/img/cat/nodejs.png",
+                              price: 6,
+                              description: "Node.js logo",
+                              retired: true)
+  end
+
   test "user cart shows retired stickers" do
     User.create(username: "Jason",
                 password: "password")
-
-    Sticker.create(title: "Nodejs",
-                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
-                   price: 6,
-                   description: "Node.js logo",
-                   retired: true)
 
     Sticker.create(title: "Reactjs",
                    image: "http://devstickers.com/assets/img/cat/react-js.png",
@@ -33,12 +35,6 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
   end
 
   test "user order page shows retired stickers" do
-    Sticker.create(title: "Nodejs",
-                   image: "http://devstickers.com/assets/img/cat/nodejs.png",
-                   price: 6,
-                   description: "Node.js logo",
-                   retired: true)
-
     User.create(username: "Sekhar",
                 password: "password")
 
@@ -63,24 +59,13 @@ class StickerRetirementTest < ActionDispatch::IntegrationTest
   end
 
   test "retired stickers have show pages" do
-    sticker = Sticker.create(title: "Nodejs",
-                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
-                             price: 6,
-                             description: "Node.js logo",
-                             retired: true)
+    visit sticker_path(@sticker.id)
 
-    visit sticker_path(sticker.id)
     assert page.has_content?("No longer available")
   end
 
   test "retired stickers cannot be added to cart" do
-    sticker = Sticker.create(title: "Nodejs",
-                             image: "http://devstickers.com/assets/img/cat/nodejs.png",
-                             price: 6,
-                             description: "Node.js logo",
-                             retired: true)
-
-    visit sticker_path(sticker.id)
+    visit sticker_path(@sticker.id)
 
     refute page.has_content?("Add to Cart")
   end
