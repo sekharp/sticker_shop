@@ -18,15 +18,14 @@ class AdminEditStickerTest < ActionDispatch::IntegrationTest
     fill_in "Category", with: "Ruby"
     fill_in "Description", with: "New sticker description"
     fill_in "Price", with: 5
+    fill_in "Image", with: "http://devstickers.com/assets/img/pro/uwgt.png"
     click_button "Create Sticker"
   end
 
   test "admin can view edit path" do
     visit admin_stickers_path
-
     sticker = Sticker.last
-
-    click_button "Edit"
+    click_link "Edit"
 
     assert edit_admin_sticker_path(sticker.id), current_path
 
@@ -43,24 +42,20 @@ class AdminEditStickerTest < ActionDispatch::IntegrationTest
     click_button "Update Sticker"
 
     assert admin_stickers_path, current_path
-    within("#stickers") do
-      assert page.has_content?("Edited Sticker")
-    end
+
+    assert page.has_content?("Edited Sticker")
   end
 
   test "admin can edit sticker status" do
     visit admin_stickers_path
-    sticker = Sticker.last
-    click_button "Edit"
+    click_link "Edit"
 
     choose("sticker_retired_true")
     click_button "Update Sticker"
 
     assert admin_stickers_path, current_path
 
-    within("#stickers") do
-      click_button "Edit"
-    end
+    click_link "Edit"
 
     within("#edit-sticker") do
       assert page.has_content?("currently not available")

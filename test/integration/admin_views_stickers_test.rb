@@ -34,7 +34,6 @@ class AdminViewsStickersTest < ActionDispatch::IntegrationTest
     sticker = Sticker.last
 
     within("#all-stickers") do
-      save_and_open_page
       assert page.has_css?("img[src*='#{sticker.image}']")
       assert page.has_content?("New Sticker")
       assert page.has_content?("New sticker description")
