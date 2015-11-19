@@ -29,8 +29,6 @@ class Admin::StickersController < Admin::BaseController
     @sticker = Sticker.find(params[:id])
   end
 
-
-
   private
 
   def sticker_params
