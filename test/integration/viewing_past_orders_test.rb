@@ -4,6 +4,7 @@ class ViewingPastOrdersTest < ActionDispatch::IntegrationTest
   test "authenticated user can see past orders" do
     user = User.create(username: "Sekhar",
                        password: "password")
+
     visit root_path
     click_link "Login"
 
