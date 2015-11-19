@@ -22,6 +22,7 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
     fill_in "Category", with: "Ruby"
     fill_in "Description", with: "New sticker description"
     fill_in "Price", with: 5
+    fill_in "Image", with: "http://devstickers.com/assets/img/pro/uwgt.png"
     click_button "Create Sticker"
 
     assert stickers_path, current_path
@@ -42,6 +43,7 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
     fill_in "Category", with: "Ruby"
     fill_in "Description", with: "New sticker description"
     fill_in "Price", with: 0
+    fill_in "Image", with: "http://devstickers.com/assets/img/pro/kg7l.png"
     click_button "Create Sticker"
 
     within("#nav-bar") do
@@ -58,6 +60,7 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
     fill_in "Category", with: "Ruby"
     fill_in "Description", with: "New sticker description"
     fill_in "Price", with: 5.5
+    fill_in "Image", with: "http://devstickers.com/assets/img/pro/vib8.png"
     click_button "Create Sticker"
 
     within("#nav-bar") do

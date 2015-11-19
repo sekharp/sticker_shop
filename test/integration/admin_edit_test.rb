@@ -18,6 +18,7 @@ class AdminEditStickerTest < ActionDispatch::IntegrationTest
     fill_in "Category", with: "Ruby"
     fill_in "Description", with: "New sticker description"
     fill_in "Price", with: 5
+    fill_in "Image", with: "http://devstickers.com/assets/img/pro/uwgt.png"
     click_button "Create Sticker"
   end
 
