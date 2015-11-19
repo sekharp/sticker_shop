@@ -19,7 +19,12 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id].to_i)
+    order = Order.find(params[:id].to_i)
+    if current_user.id == order.user.id
+      @order = order
+    else
+      redirect_to orders_path
+    end
   end
 
   private
