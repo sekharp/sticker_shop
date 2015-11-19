@@ -12,8 +12,5 @@
 !/log/.keep
 /tmp
 
-# Ignore application configuration
-/config/application.yml
-
 # Ignore local sticker files
 /public/system/stickers
