@@ -35,6 +35,9 @@
   <p><b>Sticker Price: </b><%= number_to_currency(os.sticker.price) %></p>
   <p><b>Quantity: </b><%= os.quantity %></p>
   <p><b>Sticker Subtotal: </b><%= number_to_currency(os.sticker.price * os.quantity) %></p>
+  <% if os.sticker.retired? %>
+  <p><b><i>(Sticker no longer available)</i></b></p>
+  <% end %>
   <div class="divider"></div>
 </div>
 <% end %>

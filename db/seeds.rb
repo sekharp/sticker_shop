@@ -29,18 +29,18 @@ class Seed
                                          image: "http://devstickers.com/assets/img/cat/react-js.png",
                                          price: 8,
                                          description: "React.js logo")
+    @angularjs_sticker = @javascript_category.stickers.create(title: "Angularjs",
+                                         image: "http://devstickers.com/assets/img/cat/angularjs.png",
+                                         price: 15,
+                                         description: "Angular.js logo")
     @ruby_sticker = @ruby_category.stickers.create(title: "Ruby",
                                    image: "http://devstickers.com/assets/img/cat/ruby.png",
                                    price: 82,
                                    description: "Ruby logo")
-    @browser_category.stickers.create(title: "Chrome",
+    @chrome_sticker = @browser_category.stickers.create(title: "Chrome",
                                       image: "http://devstickers.com/assets/img/cat/chrome.png",
                                       price: 2,
                                       description: "Chrome logo")
-    @javascript_category.stickers.create(title: "Angularjs",
-                                         image: "http://devstickers.com/assets/img/cat/angularjs.png",
-                                         price: 3,
-                                         description: "Angular.js logo")
     @javascript_category.stickers.create(title: "Javascript",
                                          image: "http://devstickers.com/assets/img/cat/javascript.png",
                                          price: 5,
@@ -49,14 +49,63 @@ class Seed
                                   image: "http://devstickers.com/assets/img/cat/git.png",
                                   price: 55,
                                   description: "Git logo")
-    @editor_category.stickers.create(title: "Vim",
+    @vim_sticker = @editor_category.stickers.create(title: "Vim",
                                      image: "http://devstickers.com/assets/img/pro/tnue.png",
                                      price: 7,
-                                     description: "Vim logo")
+                                     description: "Vim logo",
+                                     retired: true)
     @editor_category.stickers.create(title: "Atom",
                                      image: "http://devstickers.com/assets/img/pro/iwyr.png",
                                      price: 6,
                                      description: "Atom logo")
+    Sticker.create(title: "HTML5 + CSS3",
+                   image: "http://devstickers.com/assets/img/cat/html5-css3.png",
+                   price: 1,
+                   description: "HTML5 and CSS3 logo")
+    Sticker.create(title: "Linux",
+                   image: "http://devstickers.com/assets/img/cat/linux.png",
+                   price: 10,
+                   description: "Linux logo")
+    Sticker.create(title: "PHP",
+                   image: "http://devstickers.com/assets/img/cat/php.png",
+                   price: 12,
+                   description: "PHP logo")
+    Sticker.create(title: "Bower",
+                   image: "http://devstickers.com/assets/img/cat/bower.png",
+                   price: 15,
+                   description: "Bower logo")
+    Sticker.create(title: "Jenkins",
+                   image: "http://devstickers.com/assets/img/cat/jenkins.png",
+                   price: 8,
+                   description: "Jenkins logo")
+    Sticker.create(title: "Java",
+                   image: "http://devstickers.com/assets/img/cat/java.png",
+                   price: 2,
+                   description: "Java logo")
+    Sticker.create(title: "Caffeine",
+                   image: "http://devstickers.com/assets/img/cat/caffeine.png",
+                   price: 18,
+                   description: "Caffeine logo")
+    Sticker.create(title: "Yeoman",
+                   image: "http://devstickers.com/assets/img/cat/yeoman.png",
+                   price: 9,
+                   description: "Yeoman logo")
+    Sticker.create(title: "Reddit",
+                   image: "http://devstickers.com/assets/img/cat/reddit.png",
+                   price: 110,
+                   description: "Reddit logo")
+    Sticker.create(title: "NASA",
+                   image: "http://devstickers.com/assets/img/cat/nasa.png",
+                   price: 69,
+                   description: "NASA logo")
+    Sticker.create(title: "Emoji",
+                   image: "http://devstickers.com/assets/img/cat/emoji.png",
+                   price: 44,
+                   description: "Emojis of monkeys")
+    Sticker.create(title: "Programming Languages",
+                   image: "http://devstickers.com/assets/img/cat/programming-languages.png",
+                   price: 28,
+                   description: "Programming languages humor")
 
     puts "#{Sticker.all.map(&:title).join(", ")} stickers created."
   end
@@ -89,7 +138,7 @@ class Seed
                          city: Faker::Address.city,
                          state: Faker::Address.state_abbr,
                          zip: Faker::Address.zip )
-    User.create(first_name: "Britney",
+    @britney = User.create(first_name: "Britney",
                 last_name: "Spears",
                 username: "britneyspears",
                 password: "oopsididitagain",
@@ -109,14 +158,16 @@ class Seed
   end
 
   def create_orders
-    @order_1 = Order.create(status: "ordered",
+    @order_1 = Order.create(status: "Ordered",
                             user_id: @sekhar.id)
-    @order_2 = Order.create(status: "paid",
+    @order_2 = Order.create(status: "Paid",
                             user_id: @sekhar.id)
-    @order_3 = Order.create(status: "cancelled",
+    @order_3 = Order.create(status: "Cancelled",
                             user_id: @emily.id)
-    @order_4 = Order.create(status: "completed",
+    @order_4 = Order.create(status: "Completed",
                             user_id: @jason.id)
+    @order_5 = Order.create(status: "Completed",
+                            user_id: @britney.id)
     puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
   end
 
@@ -128,17 +179,23 @@ class Seed
                         order_id: @order_1.id,
                         sticker_id: @reactjs_sticker.id)
     OrderSticker.create(quantity: 5,
-                        order_id: @order_2.id,
+                        order_id: @order_1.id,
                         sticker_id: @ruby_sticker.id)
+    OrderSticker.create(quantity: 4,
+                        order_id: @order_2.id,
+                        sticker_id: @vim_sticker.id)
+    OrderSticker.create(quantity: 2,
+                        order_id: @order_2.id,
+                        sticker_id: @chrome_sticker.id)
     OrderSticker.create(quantity: 3,
                         order_id: @order_3.id,
                         sticker_id: @nodejs_sticker.id)
     OrderSticker.create(quantity: 6,
-                        order_id: @order_3.id,
+                        order_id: @order_4.id,
                         sticker_id: @reactjs_sticker.id)
     OrderSticker.create(quantity: 2,
-                        order_id: @order_4.id,
-                        sticker_id: @ruby_sticker.id)
+                        order_id: @order_5.id,
+                        sticker_id: @angularjs_sticker.id)
   end
 end
 

@@ -27,7 +27,7 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
 
     assert stickers_path, current_path
     within("#nav-bar") do
-      assert page.has_content?("NEW STICKER sticker created")
+      assert page.has_content?("Successfully added New Sticker sticker to the store.")
     end
     within(".container") do
       assert page.has_content?("New sticker description")
@@ -64,7 +64,7 @@ class AdminStickerCreationTest < ActionDispatch::IntegrationTest
     click_button "Create Sticker"
 
     within("#nav-bar") do
-      assert page.has_content?("NEW STICKER sticker created")
+      assert page.has_content?("Successfully added New Sticker sticker to the store.")
     end
   end
 end
