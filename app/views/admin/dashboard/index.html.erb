@@ -30,7 +30,7 @@
       <tr>
         <td><%= link_to order.id, order %></td>
         <td><%= order.created_at.strftime("%B %d, %Y") %></td>
-        <td><%= order.status.capitalize %></td>
+        <td><%= order.status %></td>
 
         <td>
           <% if order.status == "ordered" %>

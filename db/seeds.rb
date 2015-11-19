@@ -158,15 +158,15 @@ class Seed
   end
 
   def create_orders
-    @order_1 = Order.create(status: "Ordered",
+    @order_1 = Order.create(status: "ordered",
                             user_id: @sekhar.id)
-    @order_2 = Order.create(status: "Paid",
+    @order_2 = Order.create(status: "paid",
                             user_id: @sekhar.id)
-    @order_3 = Order.create(status: "Cancelled",
+    @order_3 = Order.create(status: "cancelled",
                             user_id: @emily.id)
-    @order_4 = Order.create(status: "Completed",
+    @order_4 = Order.create(status: "completed",
                             user_id: @jason.id)
-    @order_5 = Order.create(status: "Completed",
+    @order_5 = Order.create(status: "completed",
                             user_id: @britney.id)
     puts "Orders with id #{Order.all.map(&:id).join(", ")} created."
   end
