@@ -1,16 +1,3 @@
-# As an Admin
-#       When I visit "/admin/dashboard"
-#       Then I should see a link for viewing all items
-#       And when I click that link
-#       Then my current path should be "/admin/items"
-#       Then I should see a table with all items (active and inactive)
-#       And each item should have:
-#         - A thumbnail of the image
-#         - Title that links to the item
-#         - Description
-#         - Status
-#         - Actions (Edit)
-
 require "test_helper"
 
 class AdminViewsStickersTest < ActionDispatch::IntegrationTest
@@ -35,17 +22,25 @@ class AdminViewsStickersTest < ActionDispatch::IntegrationTest
     click_button "Create Sticker"
   end
 
+  test "visit index page from dashboard" do
+    visit admin_dashboard_index_path
+
+    assert page.has_content?("View All Stickers")
+  end
+
   test "admin can view stickers" do
     visit admin_stickers_path
 
     sticker = Sticker.last
 
-    within("#{sticker.slug}-highlight") do
+    within("#all-stickers") do
+      save_and_open_page
+      assert page.has_css?("img[src*='#{sticker.image}']")
       assert page.has_content?("New Sticker")
-      assert page.has_content?("Ruby")
       assert page.has_content?("New sticker description")
       assert page.has_content?("New Sticker")
-      assert page.has_content?(5)
+      assert page.has_content?("false")
+      assert page.has_content?("Edit")
     end
 
   end

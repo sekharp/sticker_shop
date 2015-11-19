@@ -1,5 +1,32 @@
 <h1>All Stickers</h1>
 
+<table id="all-stickers">
+  <thead>
+    <tr>
+        <th data-field="id">Image</th>
+        <th data-field="name">Title</th>
+        <th data-field="price">Description</th>
+        <th data-field="price">Retired?</th>
+        <th data-field="price">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stickers.each do |sticker| %>
+    <tr>
+      <td>
+        <a href="<%= sticker_path(sticker.id) %>"><img class="thumbnail" src="<%= sticker.image.url(:original) %>"></a>
+      </td>
+      <td><%= link_to sticker.title, sticker_path(sticker.id) %></td>
+      <td><%= sticker.description %></td>
+      <td><%= sticker.retired? %></td>
+      <td><%= link_to "Edit", edit_admin_sticker_path(sticker.id), method: :get %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!--
 <div class="row" id="stickers">
   <% @stickers.each do |sticker| %>
     <div class="col s12 m4">
@@ -18,4 +45,4 @@
       </div>
     </div>
   <% end %>
-</div>
+</div> -->
