@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-19T13:27:48-07:00">2015-11-19T13:27:48-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-19T13:32:19-07:00">2015-11-19T13:32:19-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.59
+         10.12
        </span>
     </span> hits/line)
   </h2>
@@ -87,7 +87,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>47.8</td>
+        <td>79.3</td>
       </tr>
       
       <tr>
@@ -253,7 +253,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         7.06
+         9.24
        </span>
     </span> hits/line)
   </h2>
@@ -315,7 +315,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>47.8</td>
+        <td>79.3</td>
       </tr>
       
       <tr>
@@ -912,7 +912,7 @@
         <li class="covered" data-hits="6" data-linenumber="20">
           <span class="hits">6</span>
           
-          <code class="ruby">      flash[:success] = &quot;#{@sticker.title.upcase} sticker created&quot;</code>
+          <code class="ruby">      flash[:success] = &quot;Successfully added #{view_context.link_to &quot;#{@sticker.title}&quot;, sticker_path(@sticker.id)} sticker to the store.&quot;.html_safe</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="21">
@@ -1119,8 +1119,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="262" data-linenumber="11">
-          <span class="hits">262</span>
+        <li class="covered" data-hits="450" data-linenumber="11">
+          <span class="hits">450</span>
           
           <code class="ruby">    @user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1143,8 +1143,8 @@
           <code class="ruby">  def current_admin?</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="15">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="198" data-linenumber="15">
+          <span class="hits">198</span>
           
           <code class="ruby">    current_user &amp;&amp; current_user.admin?</code>
         </li>

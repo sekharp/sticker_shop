@@ -30,7 +30,7 @@
       <tr>
         <td><%= link_to order.id, order %></td>
         <td><%= order.created_at.strftime("%B %d, %Y") %></td>
-        <td><%= order.status %></td>
+        <td><%= order.status.capitalize %></td>
 
         <td>
           <% if order.status == "ordered" %>
@@ -47,8 +47,6 @@
   </tbody>
 </table>
 <p>
-  <%= link_to "Add New Sticker", new_admin_sticker_path %>
-</p>
-<p>
-  <%= link_to "View All Stickers", admin_stickers_path %>
+  <a href="<%= new_admin_sticker_path %>" class="waves-effect waves-light btn-large blue">Add New Sticker</a>
+  <a href="<%= admin_stickers_path %>" class="waves-effect waves-light btn-large blue side-margin-15">View All Stickers</a>
 </p>
