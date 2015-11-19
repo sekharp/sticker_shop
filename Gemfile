@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'paperclip'
 gem 'aws-sdk-v1'
+gem 'money-rails'
 # gem 'aws-sdk'
 # gem 'aws-s3'
 gem 'figaro'
