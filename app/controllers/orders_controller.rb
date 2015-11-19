@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
       redirect_to '/cart'
       flash[:notice] = "No stickers in cart. Don't you want stickers?"
     else
-      order = Order.create(status: "Ordered", user_id: current_user.id)
+      order = Order.create(status: "ordered", user_id: current_user.id)
       session[:cart].map { |id, q| OrderSticker.create(quantity: q, sticker_id: id, order_id: order.id) }
       session[:cart] = {}
       flash[:success] = "Order was successfully placed."
