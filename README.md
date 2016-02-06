@@ -3,3 +3,5 @@
 * Created e-commerce platform for ordering developer stickers with administrative functionality
 * Project Team Lead, liaised with product owner and responsible for database schema, cart functionality and views
 * Tech Stack: Rails, MiniTest, Capybara, BCrypt, Paperclip, Amazon Web Services
+
+![Sticker Shop Screenshot](/public/screenshot.png)
